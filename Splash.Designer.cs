@@ -41,9 +41,9 @@
             this.label1.ForeColor = System.Drawing.Color.OliveDrab;
             this.label1.Location = new System.Drawing.Point(447, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.Size = new System.Drawing.Size(113, 52);
             this.label1.TabIndex = 0;
-            this.label1.Text = "by Michael Oborne";
+            this.label1.Text = "by Michael Oborne\r\n\r\nmodified by the\r\nMCA InvenTeam";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // TXT_version
@@ -62,7 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::MissionPlanner.Properties.Resources.splashdark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(584, 337);
+            this.ClientSize = new System.Drawing.Size(584, 336);
             this.ControlBox = false;
             this.Controls.Add(this.TXT_version);
             this.Controls.Add(this.label1);

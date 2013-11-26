@@ -45,7 +45,7 @@ namespace MissionPlanner
             this.MenuHelp = new System.Windows.Forms.ToolStripButton();
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
-            this.MenuDonate = new System.Windows.Forms.ToolStripMenuItem();
+            //this.MenuDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
@@ -69,7 +69,7 @@ namespace MissionPlanner
             this.MenuHelp,
             this.MenuConnect,
             this.toolStripConnectionControl,
-            this.MenuDonate});
+            /*this.MenuDonate*/});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 4);
@@ -242,7 +242,7 @@ namespace MissionPlanner
             // 
             // MenuDonate
             // 
-            this.MenuDonate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            /*this.MenuDonate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuDonate.ForeColor = System.Drawing.Color.White;
             this.MenuDonate.Image = global::MissionPlanner.Properties.Resources.donate;
             this.MenuDonate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -252,7 +252,7 @@ namespace MissionPlanner
             this.MenuDonate.Text = "DONATE";
             this.MenuDonate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuDonate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.MenuDonate.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.MenuDonate.Click += new System.EventHandler(this.toolStripMenuItem1_Click);*/
             // 
             // menu
             // 
@@ -323,7 +323,7 @@ namespace MissionPlanner
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ContextMenuStrip CTX_mainmenu;
         private System.Windows.Forms.ToolStripMenuItem autoHideToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuDonate;
+        //private System.Windows.Forms.ToolStripMenuItem MenuDonate;
         public System.Windows.Forms.MenuStrip MainMenu;
     }
 }
