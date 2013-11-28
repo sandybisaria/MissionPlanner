@@ -94,7 +94,7 @@ namespace GeoUtility.GeoSystem
         {
             _geo = geo;
         }
-
+        
 
         /// <summary><para>Konstruktor mit Parametern für ein <see cref="Geographic"/> Objekt und die Enumeration 
         /// <see cref="Info.MapServer"/>, die festlegt, welcher MapService Dienst gewählt werden soll. 

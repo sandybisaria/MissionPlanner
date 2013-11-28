@@ -42,6 +42,8 @@ namespace MissionPlanner.GCSViews
         private void Help_Load(object sender, EventArgs e)
         {
             richTextBox1.Rtf = MissionPlanner.Properties.Resources.help_text;
+            richTextBox1.Enabled = true;
+            richTextBox1.ReadOnly = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

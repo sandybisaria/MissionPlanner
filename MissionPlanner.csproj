@@ -1855,6 +1855,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\Help.zh-Hans.resx">
       <DependentUpon>Help.cs</DependentUpon>
