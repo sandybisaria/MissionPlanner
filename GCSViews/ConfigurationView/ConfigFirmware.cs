@@ -134,58 +134,58 @@ namespace MissionPlanner.GCSViews
         {
             if (temp.url2560.ToLower().Contains("AR2".ToLower()) || temp.url2560.ToLower().Contains("apm1/APMRover".ToLower()))
             {
-                pictureBoxRover.Text = temp.name;
-                pictureBoxRover.Tag = temp;
+                //pictureBoxRover.Text = temp.name;
+                //pictureBoxRover.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("AP-".ToLower()) || temp.url2560.ToLower().Contains("apm1/ArduPlane".ToLower()))
             {
-                pictureBoxAPM.Text = temp.name;
-                pictureBoxAPM.Tag = temp;
+                //pictureBoxAPM.Text = temp.name;
+                //pictureBoxAPM.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("APHIL-".ToLower()) || temp.url2560.ToLower().Contains("apm1-hilsensors/ArduPlane".ToLower()))
             {
-                pictureBoxAPHil.Text = temp.name;
-                pictureBoxAPHil.Tag = temp;
+                //pictureBoxAPHil.Text = temp.name;
+                //pictureBoxAPHil.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-quad-".ToLower()) || temp.url2560.ToLower().Contains("1-quad/ArduCopter".ToLower()))
             {
-                pictureBoxQuad.Text = temp.name + " Quad";
-                pictureBoxQuad.Tag = temp;
+                //pictureBoxQuad.Text = temp.name + " Quad";
+                //pictureBoxQuad.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-tri".ToLower()) || temp.url2560.ToLower().Contains("-tri/ArduCopter".ToLower()))
             {
-                pictureBoxTri.Text = temp.name + " Tri";
-                pictureBoxTri.Tag = temp;
+                //pictureBoxTri.Text = temp.name + " Tri";
+                //pictureBoxTri.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-hexa".ToLower()) || temp.url2560.ToLower().Contains("-hexa/ArduCopter".ToLower()))
             {
-                pictureBoxHexa.Text = temp.name + " Hexa";
-                pictureBoxHexa.Tag = temp;
+                //pictureBoxHexa.Text = temp.name + " Hexa";
+                //pictureBoxHexa.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-y6".ToLower()) || temp.url2560.ToLower().Contains("-y6/ArduCopter".ToLower()))
             {
-                pictureBoxY6.Text = temp.name + " Y6";
-                pictureBoxY6.Tag = temp;
+                //pictureBoxY6.Text = temp.name + " Y6";
+                //pictureBoxY6.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-heli-".ToLower()) || temp.url2560.ToLower().Contains("-heli/ArduCopter".ToLower()))
             {
-                pictureBoxHeli.Text = temp.name;
-                pictureBoxHeli.Tag = temp;
+                //pictureBoxHeli.Text = temp.name;
+                //pictureBoxHeli.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-helhil".ToLower()) || temp.url2560.ToLower().Contains("-heli-hil/ArduCopter".ToLower()))
             {
-                pictureBoxACHHil.Text = temp.name;
-                pictureBoxACHHil.Tag = temp;
+                //pictureBoxACHHil.Text = temp.name;
+                //pictureBoxACHHil.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-quadhil".ToLower()) || temp.url2560.ToLower().Contains("-quad-hil/ArduCopter".ToLower()))
             {
-                pictureBoxACHil.Text = temp.name;
-                pictureBoxACHil.Tag = temp;
+                //pictureBoxACHil.Text = temp.name;
+                //pictureBoxACHil.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-octaquad-".ToLower()) || temp.url2560.ToLower().Contains("-octa-quad/ArduCopter".ToLower()))
             {
-                pictureBoxOctaQuad.Text = temp.name + " Octa Quad";
-                pictureBoxOctaQuad.Tag = temp;
+                //pictureBoxOctaQuad.Text = temp.name + " Octa Quad";
+                //pictureBoxOctaQuad.Tag = temp;
             }
             else if (temp.url2560.ToLower().Contains("ac2-octa-".ToLower()) || temp.url2560.ToLower().Contains("-octa/ArduCopter".ToLower()))
             {

@@ -368,18 +368,18 @@ namespace MissionPlanner
                     if (DateTime.Now > deadline)
                     {
                         //if (Progress != null)
-                        //    Progress(-1, "No Heatbeat Packets");
+                        //    Progress(-1, "No heartbeat Packets");
                         countDown.Stop();
                         this.Close();
 
                         if (hbseen)
                         {
-                            progressWorkerEventArgs.ErrorMessage = "Only 1 Heatbeat Received";
+                            progressWorkerEventArgs.ErrorMessage = "Only 1 heartbeat Received";
                             throw new Exception("Only 1 Mavlink Heartbeat Packets was read from this port - Verify your hardware is setup correctly\nMission Planner waits for 2 valid heartbeat packets before connecting");
                         }
                         else
                         {
-                            progressWorkerEventArgs.ErrorMessage = "No Heatbeat Packets Received";
+                            progressWorkerEventArgs.ErrorMessage = "No heartbeat Packets Received";
                             throw new Exception(@"Can not establish a connection\n
 Please check the following
 1. You have firmware loaded

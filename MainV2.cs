@@ -69,7 +69,7 @@ namespace MissionPlanner
             public static Image sim = global::MissionPlanner.Properties.Resources.light_simulation_icon;
             public static Image terminal = global::MissionPlanner.Properties.Resources.light_terminal_icon;
             public static Image help = global::MissionPlanner.Properties.Resources.light_help_icon;
-            public static Image donate = global::MissionPlanner.Properties.Resources.donate;
+            //public static Image donate = global::MissionPlanner.Properties.Resources.donate;
             public static Image connect = global::MissionPlanner.Properties.Resources.light_connect_icon;
             public static Image disconnect = global::MissionPlanner.Properties.Resources.light_disconnect_icon;
             public static Image bg = global::MissionPlanner.Properties.Resources.bgdark;
@@ -84,7 +84,7 @@ namespace MissionPlanner
             public new static Image sim = global::MissionPlanner.Properties.Resources.dark_simulation_icon;
             public new static Image terminal = global::MissionPlanner.Properties.Resources.dark_terminal_icon;
             public new static Image help = global::MissionPlanner.Properties.Resources.dark_help_icon;
-            public new static Image donate = global::MissionPlanner.Properties.Resources.donate;
+            //public new static Image donate = global::MissionPlanner.Properties.Resources.donate;
             public new static Image connect = global::MissionPlanner.Properties.Resources.dark_connect_icon;
             public new static Image disconnect = global::MissionPlanner.Properties.Resources.dark_disconnect_icon;
             public new static Image bg = global::MissionPlanner.Properties.Resources.bgdark;
@@ -122,7 +122,7 @@ namespace MissionPlanner
         /// </summary>
         public static bool speechEnable = false;
         /// <summary>
-        /// spech engine static class
+        /// speech engine static class
         /// </summary>
         public static Speech speechEngine = null;
         /// <summary>
@@ -152,7 +152,7 @@ namespace MissionPlanner
         /// <summary>
         /// track the last heartbeat sent
         /// </summary>
-        private DateTime heatbeatSend = DateTime.Now;
+        private DateTime heartbeatSend = DateTime.Now;
         /// <summary>
         /// used to call anything as needed.
         /// </summary>
@@ -392,7 +392,7 @@ namespace MissionPlanner
                         this.Location = new Point(100, 100);
                     }
                 }
-
+                
                 if (config["MainHeight"] != null)
                     this.Height = int.Parse(config["MainHeight"].ToString());
                 if (config["MainWidth"] != null)
@@ -1366,7 +1366,7 @@ namespace MissionPlanner
                     }
 
                     // send a hb every seconds from gcs to ap
-                    if (heatbeatSend.Second != DateTime.Now.Second)
+                    if (heartbeatSend.Second != DateTime.Now.Second)
                     {
                         MAVLink.mavlink_heartbeat_t htb = new MAVLink.mavlink_heartbeat_t()
                         {
@@ -1388,7 +1388,7 @@ namespace MissionPlanner
                             catch { }
                         }
 
-                        heatbeatSend = DateTime.Now;
+                        heartbeatSend = DateTime.Now;
                     }
 
                     // if not connected or busy, sleep and loop
@@ -2074,7 +2074,7 @@ namespace MissionPlanner
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            try
+            try //TODO Make our own PayPal (or get rid of this link)
             {
                 System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mich146%40hotmail%2ecom&lc=AU&item_name=Michael%20Oborne&no_note=0&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest");
             }

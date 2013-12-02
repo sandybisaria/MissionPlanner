@@ -292,7 +292,7 @@ namespace MissionPlanner
             this.MinimumSize = new System.Drawing.Size(1024, 575);
             this.Name = "MainV2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mission Planner - By Michael Oborne";
+            this.Text = "Mission Planner - By Michael Oborne, Modified By the MCA InvenTeam";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainV2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainV2_FormClosed);
             this.Load += new System.EventHandler(this.MainV2_Load);

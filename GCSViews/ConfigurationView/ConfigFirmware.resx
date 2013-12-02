@@ -117,135 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBoxAPM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBoxAPM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 0</value>
-  </data>
-  <data name="pictureBoxAPM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBoxAPM.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPM.Name" xml:space="preserve">
-    <value>pictureBoxAPM</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPM.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPM.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPM.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="pictureBoxQuad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxQuad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 0</value>
-  </data>
-  <data name="pictureBoxQuad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxQuad.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxQuad.Name" xml:space="preserve">
-    <value>pictureBoxQuad</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxQuad.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxQuad.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxQuad.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="pictureBoxHexa.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxHexa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 0</value>
-  </data>
-  <data name="pictureBoxHexa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxHexa.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHexa.Name" xml:space="preserve">
-    <value>pictureBoxHexa</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHexa.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHexa.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHexa.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="pictureBoxTri.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxTri.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 176</value>
-  </data>
-  <data name="pictureBoxTri.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxTri.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxTri.Name" xml:space="preserve">
-    <value>pictureBoxTri</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxTri.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxTri.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxTri.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="pictureBoxY6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxY6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 176</value>
-  </data>
-  <data name="pictureBoxY6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxY6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxY6.Name" xml:space="preserve">
-    <value>pictureBoxY6</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxY6.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxY6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxY6.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
   <data name="lbl_status.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_status.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbl_status.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 443</value>
   </data>
@@ -268,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="progress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -292,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;progress.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -322,31 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="pictureBoxHeli.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxHeli.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 176</value>
-  </data>
-  <data name="pictureBoxHeli.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxHeli.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHeli.Name" xml:space="preserve">
-    <value>pictureBoxHeli</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHeli.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHeli.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHeli.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>9</value>
   </data>
   <data name="BUT_setup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -376,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BUT_setup.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="pictureBoxHilimage.ImageLocation" xml:space="preserve">
     <value />
@@ -403,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxHilimage.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="pictureBoxAPHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -430,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxAPHil.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="pictureBoxACHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -457,7 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxACHil.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="pictureBoxACHHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -484,10 +340,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxACHHil.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="pictureBoxOcta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>654, 176</value>
+    <value>317, 85</value>
   </data>
   <data name="pictureBoxOcta.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 150</value>
@@ -505,49 +361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxOcta.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="pictureBoxOctaQuad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>654, 0</value>
-  </data>
-  <data name="pictureBoxOctaQuad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxOctaQuad.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxOctaQuad.Name" xml:space="preserve">
-    <value>pictureBoxOctaQuad</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxOctaQuad.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxOctaQuad.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxOctaQuad.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="pictureBoxRover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 0</value>
-  </data>
-  <data name="pictureBoxRover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 150</value>
-  </data>
-  <data name="pictureBoxRover.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxRover.Name" xml:space="preserve">
-    <value>pictureBoxRover</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxRover.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ImageLabel, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxRover.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxRover.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>16</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -574,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="CMB_history.Location" type="System.Drawing.Point, System.Drawing">
     <value>684, 389</value>
@@ -598,7 +412,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CMB_history.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="CMB_history_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
