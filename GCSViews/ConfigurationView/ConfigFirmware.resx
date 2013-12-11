@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="progress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;progress.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,145 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="BUT_setup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BUT_setup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 381</value>
-  </data>
-  <data name="BUT_setup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 32</value>
-  </data>
-  <data name="BUT_setup.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="BUT_setup.Text" xml:space="preserve">
-    <value>APM Setup (Plane and Quad)</value>
-  </data>
-  <data name="BUT_setup.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;BUT_setup.Name" xml:space="preserve">
-    <value>BUT_setup</value>
-  </data>
-  <data name="&gt;&gt;BUT_setup.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BUT_setup.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;BUT_setup.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="pictureBoxHilimage.ImageLocation" xml:space="preserve">
-    <value />
-  </data>
-  <data name="pictureBoxHilimage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 364</value>
-  </data>
-  <data name="pictureBoxHilimage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pictureBoxHilimage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 50</value>
-  </data>
-  <data name="pictureBoxHilimage.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHilimage.Name" xml:space="preserve">
-    <value>pictureBoxHilimage</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHilimage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHilimage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxHilimage.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="pictureBoxAPHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxAPHil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 364</value>
-  </data>
-  <data name="pictureBoxAPHil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pictureBoxAPHil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 50</value>
-  </data>
-  <data name="pictureBoxAPHil.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPHil.Name" xml:space="preserve">
-    <value>pictureBoxAPHil</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPHil.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPHil.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxAPHil.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="pictureBoxACHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxACHil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 364</value>
-  </data>
-  <data name="pictureBoxACHil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pictureBoxACHil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 50</value>
-  </data>
-  <data name="pictureBoxACHil.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHil.Name" xml:space="preserve">
-    <value>pictureBoxACHil</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHil.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHil.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHil.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="pictureBoxACHHil.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxACHHil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 364</value>
-  </data>
-  <data name="pictureBoxACHHil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pictureBoxACHHil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 50</value>
-  </data>
-  <data name="pictureBoxACHHil.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHHil.Name" xml:space="preserve">
-    <value>pictureBoxACHHil</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHHil.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHHil.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxACHHil.ZOrder" xml:space="preserve">
-    <value>12</value>
   </data>
   <data name="pictureBoxOcta.Location" type="System.Drawing.Point, System.Drawing">
     <value>317, 85</value>
@@ -361,22 +223,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxOcta.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>11</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 351</value>
+    <value>197, 349</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 13</value>
+    <value>398, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Please click the images above for "Flight versions"</value>
+    <value>If this is your first time using this program, click on the drone and install the firmware!</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>

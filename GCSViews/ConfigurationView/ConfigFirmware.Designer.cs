@@ -45,7 +45,7 @@ namespace MissionPlanner.GCSViews
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Label label2;
         //private Controls.ImageLabel pictureBoxHeli;
-        private Controls.MyButton BUT_setup;
+        //private Controls.MyButton BUT_setup;
         //private PictureBox pictureBoxHilimage;
         //private PictureBox pictureBoxAPHil;
         //private PictureBox pictureBoxACHil;
@@ -60,11 +60,6 @@ namespace MissionPlanner.GCSViews
             this.lbl_status = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.BUT_setup = new MissionPlanner.Controls.MyButton();
-            //this.pictureBoxHilimage = new System.Windows.Forms.PictureBox();
-            //this.pictureBoxAPHil = new System.Windows.Forms.PictureBox();
-            //this.pictureBoxACHil = new System.Windows.Forms.PictureBox();
-            //this.pictureBoxACHHil = new System.Windows.Forms.PictureBox();
             this.pictureBoxOcta = new MissionPlanner.Controls.ImageLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.CMB_history = new System.Windows.Forms.ComboBox();
@@ -74,10 +69,6 @@ namespace MissionPlanner.GCSViews
             this.lbl_px4io = new System.Windows.Forms.Label();
             this.lbl_dlfw = new System.Windows.Forms.Label();
             this.lbl_px4bl = new System.Windows.Forms.Label();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxHilimage)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxAPHil)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxACHil)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxACHHil)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_status
@@ -95,50 +86,6 @@ namespace MissionPlanner.GCSViews
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // BUT_setup
-            // 
-            resources.ApplyResources(this.BUT_setup, "BUT_setup");
-            this.BUT_setup.Name = "BUT_setup";
-            this.BUT_setup.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxHilimage
-            // 
-            //this.pictureBoxHilimage.Image = global::MissionPlanner.Properties.Resources.hil;
-            //resources.ApplyResources(this.pictureBoxHilimage, "pictureBoxHilimage");
-            //this.pictureBoxHilimage.Name = "pictureBoxHilimage";
-            //this.pictureBoxHilimage.TabStop = false;
-            //this.pictureBoxHilimage.Tag = "";
-            // 
-            // pictureBoxAPHil
-            // 
-            //this.pictureBoxAPHil.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxAPHil.Image = global::MissionPlanner.Properties.Resources.hilplane;
-            //resources.ApplyResources(this.pictureBoxAPHil, "pictureBoxAPHil");
-            //this.pictureBoxAPHil.Name = "pictureBoxAPHil";
-            //this.pictureBoxAPHil.TabStop = false;
-            //this.pictureBoxAPHil.Tag = "";
-            //this.pictureBoxAPHil.Click += new System.EventHandler(this.pictureBoxFW_Click);
-            // 
-            // pictureBoxACHil
-            // 
-            //this.pictureBoxACHil.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxACHil.Image = global::MissionPlanner.Properties.Resources.hilquad;
-            //resources.ApplyResources(this.pictureBoxACHil, "pictureBoxACHil");
-            //this.pictureBoxACHil.Name = "pictureBoxACHil";
-            //this.pictureBoxACHil.TabStop = false;
-            //this.pictureBoxACHil.Tag = "";
-            //this.pictureBoxACHil.Click += new System.EventHandler(this.pictureBoxFW_Click);
-            // 
-            // pictureBoxACHHil
-            // 
-            //this.pictureBoxACHHil.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxACHHil.Image = global::MissionPlanner.Properties.Resources.hilheli;
-            //resources.ApplyResources(this.pictureBoxACHHil, "pictureBoxACHHil");
-            //this.pictureBoxACHHil.Name = "pictureBoxACHHil";
-            //this.pictureBoxACHHil.TabStop = false;
-            //this.pictureBoxACHHil.Tag = "";
-            //this.pictureBoxACHHil.Click += new System.EventHandler(this.pictureBoxFW_Click);
             // 
             // pictureBoxOcta
             // 
@@ -217,21 +164,12 @@ namespace MissionPlanner.GCSViews
             this.Controls.Add(this.CMB_history_label);
             this.Controls.Add(this.CMB_history);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BUT_setup);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.progress);
-            //this.Controls.Add(this.pictureBoxACHHil);
-            //this.Controls.Add(this.pictureBoxACHil);
-            //this.Controls.Add(this.pictureBoxAPHil);
-            //this.Controls.Add(this.pictureBoxHilimage);
             this.Controls.Add(this.pictureBoxOcta);
             this.Name = "ConfigFirmware";
             this.Load += new System.EventHandler(this.Firmware_Load);
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxHilimage)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxAPHil)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxACHil)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxACHHil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

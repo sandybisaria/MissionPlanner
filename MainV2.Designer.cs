@@ -45,7 +45,6 @@ namespace MissionPlanner
             this.MenuHelp = new System.Windows.Forms.ToolStripButton();
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
-            //this.MenuDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
@@ -68,8 +67,7 @@ namespace MissionPlanner
             this.MenuTerminal,
             this.MenuHelp,
             this.MenuConnect,
-            this.toolStripConnectionControl,
-            /*this.MenuDonate*/});
+            this.toolStripConnectionControl});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 4);
@@ -237,22 +235,8 @@ namespace MissionPlanner
             this.toolStripConnectionControl.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripConnectionControl.Name = "toolStripConnectionControl";
             this.toolStripConnectionControl.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.toolStripConnectionControl.Size = new System.Drawing.Size(229, 63);
+            this.toolStripConnectionControl.Size = new System.Drawing.Size(263, 63);
             this.toolStripConnectionControl.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
-            // 
-            // MenuDonate
-            // 
-            /*this.MenuDonate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuDonate.ForeColor = System.Drawing.Color.White;
-            this.MenuDonate.Image = global::MissionPlanner.Properties.Resources.donate;
-            this.MenuDonate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuDonate.Name = "MenuDonate";
-            this.MenuDonate.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.MenuDonate.Size = new System.Drawing.Size(64, 63);
-            this.MenuDonate.Text = "DONATE";
-            this.MenuDonate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuDonate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.MenuDonate.Click += new System.EventHandler(this.toolStripMenuItem1_Click);*/
             // 
             // menu
             // 
