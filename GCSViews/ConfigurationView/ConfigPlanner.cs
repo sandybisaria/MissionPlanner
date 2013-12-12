@@ -534,9 +534,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             CMB_distunits.DataSource = Enum.GetNames(typeof(Common.distances));
             CMB_speedunits.DataSource = Enum.GetNames(typeof(Common.speeds));
 
-            CMB_theme.DataSource = Enum.GetNames(typeof(Utilities.ThemeManager.Themes));
+            //CMB_theme.DataSource = Enum.GetNames(typeof(Utilities.ThemeManager.Themes));
 
-            CMB_theme.Text = ThemeManager.CurrentTheme.ToString();
+            //CMB_theme.Text = ThemeManager.CurrentTheme.ToString();
 
             // setup language selection
             var cultureCodes = new[] { "en-US", "zh-Hans", "zh-TW", "ru-RU", "Fr", "Pl", "it-IT", "es-ES","de-DE" };
@@ -583,7 +583,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             SetCheckboxFromConfig("speechaltenabled", CHK_speechaltwarning);
             SetCheckboxFromConfig("speecharmenabled", CHK_speecharmdisarm);
             SetCheckboxFromConfig("beta_updates", CHK_beta);
-            SetCheckboxFromConfig("password_protect", CHK_Password);            
+            SetCheckboxFromConfig("password_protect", CHK_Password);
+
+            MainV2.config["theme"] = "BurntKermit";
 
             // this can't fail because it set at startup
             NUM_tracklength.Value = int.Parse(MainV2.config["NUM_tracklength"].ToString());
@@ -648,9 +650,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 MainV2.LogDir = ofd.SelectedPath;
             }                       
         }
-
-        private void CMB_theme_SelectedIndexChanged(object sender, EventArgs e)
+      
+        /*private void CMB_theme_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            
             if (startup)
                 return;
 
@@ -659,13 +663,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             ThemeManager.ApplyThemeTo(MainV2.instance);
 
             CustomMessageBox.Show("You may need to restart to see the full effect.");
-        }
+        }*/
 
-        private void BUT_themecustom_Click(object sender, EventArgs e)
+        /*private void BUT_themecustom_Click(object sender, EventArgs e)
         {
             ThemeManager.CustomColor();
             CMB_theme.Text = "Custom";
-        }
+        }*/
 
         private void CHK_speecharmdisarm_CheckedChanged(object sender, EventArgs e)
         {
