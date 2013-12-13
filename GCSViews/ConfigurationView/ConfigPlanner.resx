@@ -1186,54 +1186,6 @@
   <data name="&gt;&gt;CHK_speechwaypoint.ZOrder" xml:space="preserve">
     <value>46</value>
   </data>
-  <data name="label94.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label94.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 65</value>
-  </data>
-  <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
-  </data>
-  <data name="label94.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="label94.Text" xml:space="preserve">
-    <value>OSD Color</value>
-  </data>
-  <data name="&gt;&gt;label94.Name" xml:space="preserve">
-    <value>label94</value>
-  </data>
-  <data name="&gt;&gt;label94.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label94.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label94.ZOrder" xml:space="preserve">
-    <value>47</value>
-  </data>
-  <data name="CMB_osdcolor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 62</value>
-  </data>
-  <data name="CMB_osdcolor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 21</value>
-  </data>
-  <data name="CMB_osdcolor.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="&gt;&gt;CMB_osdcolor.Name" xml:space="preserve">
-    <value>CMB_osdcolor</value>
-  </data>
-  <data name="&gt;&gt;CMB_osdcolor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CMB_osdcolor.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CMB_osdcolor.ZOrder" xml:space="preserve">
-    <value>48</value>
-  </data>
   <data name="CMB_language.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 112</value>
   </data>
@@ -1253,7 +1205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CMB_language.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>47</value>
   </data>
   <data name="label93.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1280,7 +1232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label93.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>48</value>
   </data>
   <data name="CHK_enablespeech.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1310,7 +1262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CHK_enablespeech.ZOrder" xml:space="preserve">
-    <value>51</value>
+    <value>49</value>
   </data>
   <data name="CHK_hudshow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1337,7 +1289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CHK_hudshow.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>50</value>
   </data>
   <data name="label92.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1364,7 +1316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label92.ZOrder" xml:space="preserve">
-    <value>53</value>
+    <value>51</value>
   </data>
   <data name="CMB_videosources.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 8</value>
@@ -1385,7 +1337,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CMB_videosources.ZOrder" xml:space="preserve">
-    <value>54</value>
+    <value>52</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1520,7 +1472,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BUT_Joystick.ZOrder" xml:space="preserve">
-    <value>55</value>
+    <value>53</value>
   </data>
   <data name="BUT_videostop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1547,7 +1499,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BUT_videostop.ZOrder" xml:space="preserve">
-    <value>56</value>
+    <value>54</value>
   </data>
   <data name="BUT_videostart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1574,7 +1526,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BUT_videostart.ZOrder" xml:space="preserve">
-    <value>57</value>
+    <value>55</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

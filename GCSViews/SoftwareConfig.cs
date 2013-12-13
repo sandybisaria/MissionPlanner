@@ -104,7 +104,7 @@ namespace MissionPlanner.GCSViews
                     start = AddBackstageViewPage(new ConfigPlanner(), "Planner");
                 }
 
-                AddBackstageViewPage(new ConfigHelp(), "Help");
+                //AddBackstageViewPage(new ConfigHelp(), "Help");
 
                 // remeber last page accessed
                 foreach (BackstageView.BackstageViewPage page in backstageView.Pages)

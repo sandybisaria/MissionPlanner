@@ -80,7 +80,7 @@
             // 
             // BUT_betaupdate
             // 
-            resources.ApplyResources(this.BUT_betaupdate, "BUT_betaupdate");
+            //resources.ApplyResources(this.BUT_betaupdate, "BUT_betaupdate");
             this.BUT_betaupdate.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(226)))), ((int)(((byte)(150)))));
             this.BUT_betaupdate.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(193)))), ((int)(((byte)(31)))));
             this.BUT_betaupdate.Name = "BUT_betaupdate";
@@ -93,11 +93,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BUT_betaupdate);
+            //this.Controls.Add(this.BUT_betaupdate);
             this.Controls.Add(this.PIC_wizard);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.CHK_showconsole);
-            this.Controls.Add(this.BUT_updatecheck);
+            //this.Controls.Add(this.BUT_updatecheck);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Help";
             this.Load += new System.EventHandler(this.Help_Load);

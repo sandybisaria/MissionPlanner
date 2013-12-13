@@ -216,7 +216,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 #endif
         }
 
-        private void CMB_osdcolor_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void CMB_osdcolor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (startup)
                 return;
@@ -225,7 +225,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 MainV2.config["hudcolor"] = CMB_osdcolor.Text;
                 GCSViews.FlightData.myhud.hudcolor = Color.FromKnownColor((KnownColor)Enum.Parse(typeof(KnownColor), CMB_osdcolor.Text));
             }
-        }
+        }*/
 
         private void CHK_speechwaypoint_CheckedChanged(object sender, EventArgs e)
         {
@@ -473,6 +473,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             startup = false;
         }
 
+        /*
+         * A=255, R=67, G=68, B=69
+Solidbrs = Peru
+Forecolor = White
+size 13
+         * */
+        /*
         private void CMB_osdcolor_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index < 0)
@@ -482,6 +489,8 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             Rectangle rect = e.Bounds;
             Brush brush = null;
 
+            CustomMessageBox.Show(CMB_osdcolor.BackColor.ToString());
+
             if ((e.State & DrawItemState.Selected) == 0)
                 brush = new SolidBrush(CMB_osdcolor.BackColor);
             else
@@ -489,7 +498,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             g.FillRectangle(brush, rect);
 
+            CustomMessageBox.Show((string)CMB_osdcolor.Items[e.Index]);
+
             brush = new SolidBrush(Color.FromName((string)CMB_osdcolor.Items[e.Index]));
+
+            CustomMessageBox.Show(CMB_osdcolor.ForeColor.ToString());
 
             g.FillRectangle(brush, rect.X + 2, rect.Y + 2, 30, rect.Height - 4);
             g.DrawRectangle(Pens.Black, rect.X + 2, rect.Y + 2, 30, rect.Height - 4);
@@ -498,9 +511,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 brush = new SolidBrush(CMB_osdcolor.ForeColor);
             else
                 brush = SystemBrushes.HighlightText;
+            CustomMessageBox.Show(CMB_osdcolor.Font.ToString());
+            CustomMessageBox.Show(CMB_osdcolor.Font.Height.ToString());
             g.DrawString(CMB_osdcolor.Items[e.Index].ToString(),
                 CMB_osdcolor.Font, brush, rect.X + 35, rect.Top + rect.Height - CMB_osdcolor.Font.Height);
-        }
+        }*/
 
         private void CMB_videosources_Click(object sender, EventArgs e)
         {
@@ -528,7 +543,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             startup = true; // flag to ignore changes while we programatically populate controls
 
 
-            CMB_osdcolor.DataSource = Enum.GetNames(typeof(KnownColor));
+            //CMB_osdcolor.DataSource = Enum.GetNames(typeof(KnownColor));
 
             // set distance/speed unit states
             CMB_distunits.DataSource = Enum.GetNames(typeof(Common.distances));
@@ -611,13 +626,14 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             //set hud color state
             string hudcolor = (string)MainV2.config["hudcolor"];
-            int index = CMB_osdcolor.Items.IndexOf(hudcolor ?? "White");
-            try
+            //int index = CMB_osdcolor.Items.IndexOf(hudcolor ?? "White");
+            int index = 3;
+           /* try
             {
                 CMB_osdcolor.SelectedIndex = index;
             }
             catch { }
-
+            */
 
             if (MainV2.config["distunits"] != null)
                 CMB_distunits.Text = MainV2.config["distunits"].ToString();

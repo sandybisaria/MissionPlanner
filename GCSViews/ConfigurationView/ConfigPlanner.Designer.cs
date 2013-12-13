@@ -63,8 +63,6 @@
             this.CHK_speechcustom = new System.Windows.Forms.CheckBox();
             this.CHK_speechmode = new System.Windows.Forms.CheckBox();
             this.CHK_speechwaypoint = new System.Windows.Forms.CheckBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.CMB_osdcolor = new System.Windows.Forms.ComboBox();
             this.CMB_language = new System.Windows.Forms.ComboBox();
             this.label93 = new System.Windows.Forms.Label();
             this.CHK_enablespeech = new System.Windows.Forms.CheckBox();
@@ -385,21 +383,6 @@
             this.CHK_speechwaypoint.UseVisualStyleBackColor = true;
             this.CHK_speechwaypoint.CheckedChanged += new System.EventHandler(this.CHK_speechwaypoint_CheckedChanged);
             // 
-            // label94
-            // 
-            resources.ApplyResources(this.label94, "label94");
-            this.label94.Name = "label94";
-            // 
-            // CMB_osdcolor
-            // 
-            this.CMB_osdcolor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CMB_osdcolor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_osdcolor.FormattingEnabled = true;
-            resources.ApplyResources(this.CMB_osdcolor, "CMB_osdcolor");
-            this.CMB_osdcolor.Name = "CMB_osdcolor";
-            this.CMB_osdcolor.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CMB_osdcolor_DrawItem);
-            this.CMB_osdcolor.SelectedIndexChanged += new System.EventHandler(this.CMB_osdcolor_SelectedIndexChanged);
-            // 
             // CMB_language
             // 
             this.CMB_language.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -598,8 +581,6 @@
             this.Controls.Add(this.CHK_speechcustom);
             this.Controls.Add(this.CHK_speechmode);
             this.Controls.Add(this.CHK_speechwaypoint);
-            this.Controls.Add(this.label94);
-            this.Controls.Add(this.CMB_osdcolor);
             this.Controls.Add(this.CMB_language);
             this.Controls.Add(this.label93);
             this.Controls.Add(this.CHK_enablespeech);
@@ -653,8 +634,6 @@
         private System.Windows.Forms.CheckBox CHK_speechcustom;
         private System.Windows.Forms.CheckBox CHK_speechmode;
         private System.Windows.Forms.CheckBox CHK_speechwaypoint;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.ComboBox CMB_osdcolor;
         private System.Windows.Forms.ComboBox CMB_language;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.CheckBox CHK_enablespeech;
