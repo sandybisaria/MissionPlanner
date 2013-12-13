@@ -213,7 +213,7 @@ namespace MissionPlanner.Controls
 
 
         public bool bgon = true;
-        public bool hudon = true;
+        public bool hudon = false;
         public bool batteryon = true;
 
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
@@ -797,6 +797,7 @@ namespace MissionPlanner.Controls
 
         void doPaint(PaintEventArgs e)
         {
+            return;
             //Console.WriteLine("hud paint "+DateTime.Now.Millisecond);
             bool isNaN = false;
             try
