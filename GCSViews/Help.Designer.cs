@@ -95,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             //this.Controls.Add(this.BUT_betaupdate);
             this.Controls.Add(this.PIC_wizard);
-            this.Controls.Add(this.linkLabel1);
+            //this.Controls.Add(this.linkLabel1);//Change log link
             this.Controls.Add(this.CHK_showconsole);
             //this.Controls.Add(this.BUT_updatecheck);
             this.Controls.Add(this.richTextBox1);
