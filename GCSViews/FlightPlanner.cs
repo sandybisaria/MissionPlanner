@@ -377,7 +377,7 @@ namespace MissionPlanner.GCSViews
             center = new GMarkerGoogle(MainMap.Position,GMarkerGoogleType.none);
             top.Markers.Add(center);
 
-            MainMap.Zoom = 3;
+            MainMap.Zoom = 13;
 
             //set home
             try
@@ -385,7 +385,27 @@ namespace MissionPlanner.GCSViews
                 if (TXT_homelat.Text != "")
                 {
                     MainMap.Position = new PointLatLng(double.Parse(TXT_homelat.Text), double.Parse(TXT_homelng.Text));
-                    MainMap.Zoom = 13;
+                }
+                else
+                {
+                    string url = "http://freegeoip.net/xml/";
+                    XmlDocument ipDoc = new XmlDocument();
+                    ipDoc.Load(url);
+                    XmlElement root = ipDoc.DocumentElement;
+                    XmlNodeList nodes = root.SelectNodes("/Response");
+                    string lat = null;
+                    string lng = null;
+                    foreach (XmlNode node in nodes)
+                    {
+                        lat = node["Latitude"].InnerText;
+                        lng = node["Longitude"].InnerText;
+                    }
+
+                    if (!string.IsNullOrEmpty(lat) && !string.IsNullOrEmpty(lng))
+                    {
+                        MainMap.Position = new PointLatLng(double.Parse(lat), double.Parse(lng));
+                    }
+
                 }
 
             }
