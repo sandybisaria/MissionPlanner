@@ -24,7 +24,7 @@ namespace MissionPlanner.GCSViews
         {
             try
             {
-                CHK_showconsole.Checked = MainV2.config["showconsole"].ToString() == "True";
+                //CHK_showconsole.Checked = MainV2.config["showconsole"].ToString() == "True";
             }
             catch { }
         }
@@ -36,7 +36,7 @@ namespace MissionPlanner.GCSViews
 
         private void CHK_showconsole_CheckedChanged(object sender, EventArgs e)
         {
-            MainV2.config["showconsole"] = CHK_showconsole.Checked.ToString();
+           // MainV2.config["showconsole"] = CHK_showconsole.Checked.ToString();
         }
 
         private void Help_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace MissionPlanner.GCSViews
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://firmware.diydrones.com/Tools/MissionPlanner/upgrade/ChangeLog.txt");
+            //System.Diagnostics.Process.Start("http://firmware.diydrones.com/Tools/MissionPlanner/upgrade/ChangeLog.txt");
         }
 
         private void PIC_wizard_Click(object sender, EventArgs e)
