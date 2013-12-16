@@ -797,7 +797,6 @@ namespace MissionPlanner.Controls
 
         void doPaint(PaintEventArgs e)
         {
-            return;
             //Console.WriteLine("hud paint "+DateTime.Now.Millisecond);
             bool isNaN = false;
             try
@@ -884,6 +883,8 @@ namespace MissionPlanner.Controls
                 {
                     whitePen.Color = _hudcolor;
                 }
+
+                return; //TODO Add another image?
 
                 // draw sky
                 if (bgon == true)
