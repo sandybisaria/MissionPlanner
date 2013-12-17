@@ -1701,6 +1701,11 @@ namespace MissionPlanner
                 MyView.ShowScreen(MyView.current.Name);
                 return true;
             }
+            if (keyData == Keys.F6 || keyData == (Keys.Control | Keys.I) )
+            {
+                MenuSetup_Click(null, null);
+                return true;
+            }
 
             if (keyData == (Keys.Control | Keys.F)) // temp
             {

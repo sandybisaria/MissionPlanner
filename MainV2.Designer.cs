@@ -197,7 +197,7 @@ namespace MissionPlanner
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuFlightData,
             this.MenuFlightPlanner,
-            this.MenuHWConfig,
+           // this.MenuHWConfig,
             this.MenuSWConfig,
             this.MenuSimulation,
             this.MenuTerminal,
