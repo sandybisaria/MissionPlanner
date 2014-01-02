@@ -37,16 +37,20 @@ namespace MissionPlanner
             this.autoHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.MenuFlightData = new System.Windows.Forms.ToolStripButton();
             this.MenuFlightPlanner = new System.Windows.Forms.ToolStripButton();
+            this.MenuSWConfig = new System.Windows.Forms.ToolStripButton();
             this.MenuSimulation = new System.Windows.Forms.ToolStripButton();
             this.MenuTerminal = new System.Windows.Forms.ToolStripButton();
             this.MenuHelp = new System.Windows.Forms.ToolStripButton();
-            this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
-            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
+            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simulationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardwareSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHWConfig = new System.Windows.Forms.ToolStripButton();
-            this.MenuSWConfig = new System.Windows.Forms.ToolStripButton();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.MainMenu.SuspendLayout();
@@ -94,6 +98,32 @@ namespace MissionPlanner
             this.panel1.Visible = false;
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
             // 
+            // MainMenu
+            // 
+            this.MainMenu.BackgroundImage = global::MissionPlanner.Properties.Resources.bgdark;
+            this.MainMenu.ContextMenuStrip = this.CTX_mainmenu;
+            this.MainMenu.GripMargin = new System.Windows.Forms.Padding(0);
+            this.MainMenu.ImageScalingSize = new System.Drawing.Size(0, 0);
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuFlightData,
+            this.MenuFlightPlanner,
+            this.MenuSWConfig,
+            this.MenuSimulation,
+            this.MenuTerminal,
+            this.MenuHelp,
+            this.MenuConnect,
+            this.toolStripConnectionControl,
+            this.advancedToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 4);
+            this.MainMenu.Size = new System.Drawing.Size(953, 69);
+            this.MainMenu.Stretch = false;
+            this.MainMenu.TabIndex = 5;
+            this.MainMenu.Text = "menuStrip1";
+            this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MainMenu_ItemClicked);
+            this.MainMenu.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
             // MenuFlightData
             // 
             this.MenuFlightData.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +156,23 @@ namespace MissionPlanner
             this.MenuFlightPlanner.ToolTipText = "Flight Planner";
             this.MenuFlightPlanner.Click += new System.EventHandler(this.MenuFlightPlanner_Click);
             // 
+            // MenuSWConfig
+            // 
+            this.MenuSWConfig.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuSWConfig.ForeColor = System.Drawing.Color.White;
+            this.MenuSWConfig.Image = ((System.Drawing.Image)(resources.GetObject("MenuSWConfig.Image")));
+            this.MenuSWConfig.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuSWConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MenuSWConfig.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuSWConfig.Name = "MenuSWConfig";
+            this.MenuSWConfig.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.MenuSWConfig.Size = new System.Drawing.Size(94, 63);
+            this.MenuSWConfig.Text = "CONFIG/TUNING";
+            this.MenuSWConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MenuSWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.MenuSWConfig.ToolTipText = "Software Config";
+            this.MenuSWConfig.Click += new System.EventHandler(this.MenuTuning_Click);
+            // 
             // MenuSimulation
             // 
             this.MenuSimulation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,6 +188,7 @@ namespace MissionPlanner
             this.MenuSimulation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuSimulation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuSimulation.ToolTipText = "Simulation";
+            this.MenuSimulation.Visible = false;
             this.MenuSimulation.Click += new System.EventHandler(this.MenuSimulation_Click);
             // 
             // MenuTerminal
@@ -158,6 +206,7 @@ namespace MissionPlanner
             this.MenuTerminal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuTerminal.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuTerminal.ToolTipText = "Terminal";
+            this.MenuTerminal.Visible = false;
             this.MenuTerminal.Click += new System.EventHandler(this.MenuTerminal_Click);
             // 
             // MenuHelp
@@ -177,43 +226,6 @@ namespace MissionPlanner
             this.MenuHelp.ToolTipText = "Terminal";
             this.MenuHelp.Click += new System.EventHandler(this.MenuHelp_Click);
             // 
-            // toolStripConnectionControl
-            // 
-            this.toolStripConnectionControl.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripConnectionControl.BackgroundImage = global::MissionPlanner.Properties.Resources.bgdark;
-            this.toolStripConnectionControl.ForeColor = System.Drawing.Color.Black;
-            this.toolStripConnectionControl.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripConnectionControl.Name = "toolStripConnectionControl";
-            this.toolStripConnectionControl.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.toolStripConnectionControl.Size = new System.Drawing.Size(263, 63);
-            this.toolStripConnectionControl.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
-            // 
-            // MainMenu
-            // 
-            this.MainMenu.BackgroundImage = global::MissionPlanner.Properties.Resources.bgdark;
-            this.MainMenu.ContextMenuStrip = this.CTX_mainmenu;
-            this.MainMenu.GripMargin = new System.Windows.Forms.Padding(0);
-            this.MainMenu.ImageScalingSize = new System.Drawing.Size(0, 0);
-            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuFlightData,
-            this.MenuFlightPlanner,
-           // this.MenuHWConfig,
-            this.MenuSWConfig,
-            this.MenuSimulation,
-            this.MenuTerminal,
-            this.MenuHelp,
-            this.MenuConnect,
-            this.toolStripConnectionControl});
-            this.MainMenu.Location = new System.Drawing.Point(0, 0);
-            this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 4);
-            this.MainMenu.Size = new System.Drawing.Size(953, 69);
-            this.MainMenu.Stretch = false;
-            this.MainMenu.TabIndex = 5;
-            this.MainMenu.Text = "menuStrip1";
-            this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MainMenu_ItemClicked);
-            this.MainMenu.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
-            // 
             // MenuConnect
             // 
             this.MenuConnect.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,8 +241,53 @@ namespace MissionPlanner
             this.MenuConnect.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuConnect.Click += new System.EventHandler(this.MenuConnect_Click);
             // 
+            // toolStripConnectionControl
+            // 
+            this.toolStripConnectionControl.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripConnectionControl.BackgroundImage = global::MissionPlanner.Properties.Resources.bgdark;
+            this.toolStripConnectionControl.ForeColor = System.Drawing.Color.Black;
+            this.toolStripConnectionControl.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripConnectionControl.Name = "toolStripConnectionControl";
+            this.toolStripConnectionControl.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.toolStripConnectionControl.Size = new System.Drawing.Size(263, 63);
+            this.toolStripConnectionControl.Click += new System.EventHandler(this.toolStripConnectionControl_Click);
+            this.toolStripConnectionControl.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // advancedToolStripMenuItem
+            // 
+            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.terminalToolStripMenuItem,
+            this.simulationToolStripMenuItem,
+            this.hardwareSetupToolStripMenuItem});
+            this.advancedToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.advancedToolStripMenuItem.ImageTransparentColor = System.Drawing.SystemColors.HotTrack;
+            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
+            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(72, 63);
+            this.advancedToolStripMenuItem.Text = "Advanced";
+            // 
+            // terminalToolStripMenuItem
+            // 
+            this.terminalToolStripMenuItem.Name = "terminalToolStripMenuItem";
+            this.terminalToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.terminalToolStripMenuItem.Text = "Terminal";
+            this.terminalToolStripMenuItem.Click += new System.EventHandler(this.terminalToolStripMenuItem_Click);
+            // 
+            // simulationToolStripMenuItem
+            // 
+            this.simulationToolStripMenuItem.Name = "simulationToolStripMenuItem";
+            this.simulationToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.simulationToolStripMenuItem.Text = "Simulation";
+            this.simulationToolStripMenuItem.Click += new System.EventHandler(this.simulationToolStripMenuItem_Click);
+            // 
+            // hardwareSetupToolStripMenuItem
+            // 
+            this.hardwareSetupToolStripMenuItem.Name = "hardwareSetupToolStripMenuItem";
+            this.hardwareSetupToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.hardwareSetupToolStripMenuItem.Text = "Hardware Setup";
+            this.hardwareSetupToolStripMenuItem.Click += new System.EventHandler(this.hardwareSetupToolStripMenuItem_Click);
+            // 
             // MenuHWConfig
-            //
+            // 
             this.MenuHWConfig.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.MenuHWConfig.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuHWConfig.ForeColor = System.Drawing.Color.White;
@@ -245,23 +302,6 @@ namespace MissionPlanner
             this.MenuHWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuHWConfig.ToolTipText = "Hardware Config";
             this.MenuHWConfig.Click += new System.EventHandler(this.MenuSetup_Click);
-            // 
-            // MenuSWConfig
-            // 
-            this.MenuSWConfig.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuSWConfig.ForeColor = System.Drawing.Color.White;
-            this.MenuSWConfig.Image = ((System.Drawing.Image)(resources.GetObject("MenuSWConfig.Image")));
-            this.MenuSWConfig.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuSWConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MenuSWConfig.Margin = new System.Windows.Forms.Padding(0);
-            this.MenuSWConfig.Name = "MenuSWConfig";
-            this.MenuSWConfig.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.MenuSWConfig.Size = new System.Drawing.Size(94, 63);
-            this.MenuSWConfig.Text = "CONFIG/TUNING";
-            this.MenuSWConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MenuSWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.MenuSWConfig.ToolTipText = "Software Config";
-            this.MenuSWConfig.Click += new System.EventHandler(this.MenuTuning_Click);
             // 
             // MainV2
             // 
@@ -307,6 +347,10 @@ namespace MissionPlanner
         private System.Windows.Forms.ToolStripButton MenuHelp;
         public System.Windows.Forms.ToolStripButton MenuConnect;
         private Controls.ToolStripConnectionControl toolStripConnectionControl;
+        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem terminalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simulationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardwareSetupToolStripMenuItem;
         //private System.Windows.Forms.ToolStripMenuItem MenuDonate;
     }
 }
