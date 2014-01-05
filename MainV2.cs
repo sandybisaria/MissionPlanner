@@ -2252,6 +2252,7 @@ namespace MissionPlanner
                 if (e.ClickedItem == item)
                 {
                     item.BackColor = ThemeManager.ControlBGColor;
+                    //CustomMessageBox.Show("clicked");
                 }
                 else
                 {
@@ -2261,6 +2262,28 @@ namespace MissionPlanner
             }
             //MainMenu.BackColor = Color.Black;
             //MainMenu.BackgroundImage = MissionPlanner.Properties.Resources.bgdark;
+        }
+
+        private void toolStripConnectionControl_Click(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show("other tool strip");
+        }
+
+
+        private void terminalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyView.ShowScreen("Terminal");
+        }
+
+        private void simulationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyView.ShowScreen("Simulation");
+        }
+
+        private void hardwareSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CustomMessageBox.Show("hardware");
+            MyView.ShowScreen("HWConfig");
         }
     }
 }
