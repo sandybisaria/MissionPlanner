@@ -76,15 +76,6 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txt_mouse_mgrs = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_mouse_utmzone = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_mouse_utmy = new System.Windows.Forms.TextBox();
-            this.txt_mouse_utmx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,11 +83,23 @@
             this.TXT_mousealt = new System.Windows.Forms.TextBox();
             this.TXT_mouselong = new System.Windows.Forms.TextBox();
             this.TXT_mouselat = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_mouse_utmzone = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_mouse_utmy = new System.Windows.Forms.TextBox();
+            this.txt_mouse_utmx = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_mouse_mgrs = new System.Windows.Forms.TextBox();
             this.lbl_status = new System.Windows.Forms.Label();
             this.panelWaypoints = new BSE.Windows.Forms.Panel();
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.BUT_Add = new MissionPlanner.Controls.MyButton();
             this.panelAction = new BSE.Windows.Forms.Panel();
+            this.BUT_addField = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.fieldListBox = new System.Windows.Forms.ListBox();
             this.lnk_kml = new System.Windows.Forms.LinkLabel();
             this.chk_grid = new System.Windows.Forms.CheckBox();
             this.comboBoxMapType = new System.Windows.Forms.ComboBox();
@@ -473,15 +476,6 @@
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.txt_mouse_mgrs);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.txt_mouse_utmzone);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.txt_mouse_utmy);
-            this.panel2.Controls.Add(this.txt_mouse_utmx);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
@@ -491,15 +485,40 @@
             this.panel2.Controls.Add(this.TXT_mouselat);
             this.panel2.Name = "panel2";
             // 
-            // label16
+            // label7
             // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
             // 
-            // txt_mouse_mgrs
+            // label8
             // 
-            resources.ApplyResources(this.txt_mouse_mgrs, "txt_mouse_mgrs");
-            this.txt_mouse_mgrs.Name = "txt_mouse_mgrs";
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // TXT_mousealt
+            // 
+            resources.ApplyResources(this.TXT_mousealt, "TXT_mousealt");
+            this.TXT_mousealt.Name = "TXT_mousealt";
+            // 
+            // TXT_mouselong
+            // 
+            resources.ApplyResources(this.TXT_mouselong, "TXT_mouselong");
+            this.TXT_mouselong.Name = "TXT_mouselong";
+            // 
+            // TXT_mouselat
+            // 
+            resources.ApplyResources(this.TXT_mouselat, "TXT_mouselat");
+            this.TXT_mouselat.Name = "TXT_mouselat";
             // 
             // label15
             // 
@@ -536,40 +555,15 @@
             resources.ApplyResources(this.txt_mouse_utmx, "txt_mouse_utmx");
             this.txt_mouse_utmx.Name = "txt_mouse_utmx";
             // 
-            // label7
+            // label16
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
             // 
-            // label8
+            // txt_mouse_mgrs
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // TXT_mousealt
-            // 
-            resources.ApplyResources(this.TXT_mousealt, "TXT_mousealt");
-            this.TXT_mousealt.Name = "TXT_mousealt";
-            // 
-            // TXT_mouselong
-            // 
-            resources.ApplyResources(this.TXT_mouselong, "TXT_mouselong");
-            this.TXT_mouselong.Name = "TXT_mouselong";
-            // 
-            // TXT_mouselat
-            // 
-            resources.ApplyResources(this.TXT_mouselat, "TXT_mouselat");
-            this.TXT_mouselat.Name = "TXT_mouselat";
+            resources.ApplyResources(this.txt_mouse_mgrs, "txt_mouse_mgrs");
+            this.txt_mouse_mgrs.Name = "txt_mouse_mgrs";
             // 
             // lbl_status
             // 
@@ -637,6 +631,9 @@
             this.panelAction.CaptionFont = new System.Drawing.Font("Segoe UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelAction.CaptionHeight = 21;
             this.panelAction.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
+            this.panelAction.Controls.Add(this.BUT_addField);
+            this.panelAction.Controls.Add(this.label17);
+            this.panelAction.Controls.Add(this.fieldListBox);
             this.panelAction.Controls.Add(this.lnk_kml);
             this.panelAction.Controls.Add(this.chk_grid);
             this.panelAction.Controls.Add(this.panel5);
@@ -665,6 +662,24 @@
             this.panelAction.ToolTipTextCloseIcon = null;
             this.panelAction.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelAction.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // BUT_addField
+            // 
+            resources.ApplyResources(this.BUT_addField, "BUT_addField");
+            this.BUT_addField.Name = "BUT_addField";
+            this.BUT_addField.UseVisualStyleBackColor = true;
+            this.BUT_addField.Click += new System.EventHandler(this.BUT_addField_Click);
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // fieldListBox
+            // 
+            resources.ApplyResources(this.fieldListBox, "fieldListBox");
+            this.fieldListBox.FormattingEnabled = true;
+            this.fieldListBox.Name = "fieldListBox";
             // 
             // lnk_kml
             // 
@@ -1322,5 +1337,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
         private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem loadFromFileToolStripMenuItem1;
+        private System.Windows.Forms.ListBox fieldListBox;
+        private System.Windows.Forms.Button BUT_addField;
+        private System.Windows.Forms.Label label17;
     }
 }

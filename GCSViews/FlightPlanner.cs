@@ -5118,5 +5118,10 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             }
         }
 
+        private void BUT_addField_Click(object sender, EventArgs e)
+        {
+            ;
+        }
+
     }
 }
