@@ -63,5 +63,10 @@ namespace MissionPlanner.GCSViews
             MissionPlanner.Utilities.Update.dobeta = true;
             MissionPlanner.Utilities.Update.DoUpdate();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
