@@ -5151,8 +5151,14 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
         private void BUT_addField_Click(object sender, EventArgs e)
         {
             string fieldName = "";
-            if (System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Add New Field", "Give a name to the field", ref fieldName))
+            if(System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Add New Field", "Give a name to the field", ref fieldName))
                 return;
+            if(fieldLat.ContainsKey(fieldName))
+            {
+                CustomMessageBox.Show("Field already exists");
+                return;
+            }
+
             fieldListBox.Items.Add(fieldName);
             fieldLat.Add(fieldName, MainMap.Position.Lat.ToString());
             fieldLng.Add(fieldName, MainMap.Position.Lng.ToString());
@@ -5181,10 +5187,38 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             newField.AppendChild(newFieldLng);
 
             fieldDoc.Save(path);
+
+            CustomMessageBox.Show(@"The field """ + fieldName + @""" was added");
+        }
+
+        private void BUT_deleteField_Click(object sender, EventArgs e)
+        {
+            if(fieldListBox.SelectedIndex < 0)
+            {
+                CustomMessageBox.Show("No field selected");
+                return;
+            }
+
+            CustomMessageBox.Show(@"The field """ + fieldListBox.SelectedItem.ToString() + @""" was deleted");
+
+            string path = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + @"fields.xml";
+
+            XmlDocument fieldDoc = new XmlDocument();
+            fieldDoc.Load(path);
+
+            XmlNode deletedField = fieldDoc.SelectSingleNode("/Fields/Field[Name='" + fieldListBox.SelectedItem.ToString() + "']");
+            deletedField.ParentNode.RemoveChild(deletedField);
+            fieldDoc.Save(path);
+
+            fieldLat.Remove(fieldListBox.SelectedItem);
+            fieldLng.Remove(fieldListBox.SelectedItem);
+            fieldListBox.Items.Remove(fieldListBox.SelectedItem);
         }
 
         private void fieldListBox_Selected(object sender, EventArgs e)
         {
+            if(fieldListBox.SelectedItem == null)
+                return;
             MainMap.Position = new PointLatLng(double.Parse(fieldLat[fieldListBox.SelectedItem.ToString()].ToString()), 
                 double.Parse(fieldLng[fieldListBox.SelectedItem.ToString()].ToString()));
         }
