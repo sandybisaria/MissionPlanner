@@ -3006,5 +3006,10 @@ print 'Roll complete'
                 }
             }
         }
+
+        private void hud1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

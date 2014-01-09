@@ -213,7 +213,7 @@ namespace MissionPlanner.Controls
 
 
         public bool bgon = true;
-        public bool hudon = false;
+        public bool hudon = true;
         public bool batteryon = true;
 
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
@@ -884,7 +884,7 @@ namespace MissionPlanner.Controls
                     whitePen.Color = _hudcolor;
                 }
 
-                return; //TODO Add another image?
+                //return; //TODO Add another image?
 
                 // draw sky
                 if (bgon == true)
