@@ -45,6 +45,8 @@ namespace MissionPlanner.GCSViews
         bool polygongridmode = false;
         bool splinemode = false;
         Hashtable param = new Hashtable();
+        Hashtable fieldLat = new Hashtable();
+        Hashtable fieldLng = new Hashtable();
 
         bool grid = false;
 
@@ -436,6 +438,31 @@ namespace MissionPlanner.GCSViews
 
             Up.Image = global::MissionPlanner.Properties.Resources.up;
             Down.Image = global::MissionPlanner.Properties.Resources.down;
+
+            //load fields list
+
+            string path = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + @"fields.xml";
+            if (!File.Exists(path))
+            {
+                XmlTextWriter createFieldDoc = new XmlTextWriter(path, null);
+                createFieldDoc.Formatting = Formatting.Indented;
+                createFieldDoc.WriteStartDocument();
+                createFieldDoc.WriteStartElement("Fields");
+                createFieldDoc.WriteEndElement();
+                createFieldDoc.WriteEndDocument();
+                createFieldDoc.Close();
+            }
+
+            XmlDocument fieldDoc = new XmlDocument();
+	        fieldDoc.Load(path);
+            
+            foreach(XmlElement field in fieldDoc.SelectNodes("/Fields/Field"))
+            {
+                string fieldName = field.SelectSingleNode("Name").InnerText;
+                fieldListBox.Items.Add(fieldName);
+                fieldLat.Add(fieldName, field.SelectSingleNode("Lat").InnerText);
+                fieldLng.Add(fieldName, field.SelectSingleNode("Lng").InnerText);
+            }
         }
 
         public void updateCMDParams()
@@ -2688,6 +2715,9 @@ namespace MissionPlanner.GCSViews
             else
             {
                 CustomMessageBox.Show("If you're at the field, connect to your APM and wait for GPS lock. Then click 'Home Location' link to set home to your location");
+                CustomMessageBox.Show("Altitude set to 100. Home location set to map position");
+                TXT_homelat.Text = MainMap.Position.Lat.ToString();
+                TXT_homelng.Text = MainMap.Position.Lng.ToString();
             }
         }
 
@@ -4670,7 +4700,7 @@ namespace MissionPlanner.GCSViews
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane)
+            if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane) //TODO allow ArduCopter and test
             {
                 geoFenceToolStripMenuItem.Enabled = false;
             }
@@ -5120,7 +5150,43 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
 
         private void BUT_addField_Click(object sender, EventArgs e)
         {
-            ;
+            string fieldName = "";
+            if (System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Add New Field", "Give a name to the field", ref fieldName))
+                return;
+            fieldListBox.Items.Add(fieldName);
+            fieldLat.Add(fieldName, MainMap.Position.Lat.ToString());
+            fieldLng.Add(fieldName, MainMap.Position.Lng.ToString());
+
+            string path = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + @"fields.xml";
+
+            XmlDocument fieldDoc = new XmlDocument();
+            fieldDoc.Load(path);
+
+            XmlNode fieldsList = fieldDoc.SelectSingleNode("Fields");
+            XmlElement newField = fieldDoc.CreateElement("Field");
+
+            fieldsList.AppendChild(newField);
+
+            XmlElement newFieldName = fieldDoc.CreateElement("Name");
+            newFieldName.InnerText = fieldName;
+
+            XmlElement newFieldLat = fieldDoc.CreateElement("Lat");
+            newFieldLat.InnerText = MainMap.Position.Lat.ToString();
+
+            XmlElement newFieldLng = fieldDoc.CreateElement("Lng");
+            newFieldLng.InnerText = MainMap.Position.Lng.ToString();
+
+            newField.AppendChild(newFieldName);
+            newField.AppendChild(newFieldLat);
+            newField.AppendChild(newFieldLng);
+
+            fieldDoc.Save(path);
+        }
+
+        private void fieldListBox_Selected(object sender, EventArgs e)
+        {
+            MainMap.Position = new PointLatLng(double.Parse(fieldLat[fieldListBox.SelectedItem.ToString()].ToString()), 
+                double.Parse(fieldLng[fieldListBox.SelectedItem.ToString()].ToString()));
         }
 
     }

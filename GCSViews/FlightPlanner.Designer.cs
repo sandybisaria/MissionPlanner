@@ -680,6 +680,7 @@
             resources.ApplyResources(this.fieldListBox, "fieldListBox");
             this.fieldListBox.FormattingEnabled = true;
             this.fieldListBox.Name = "fieldListBox";
+            this.fieldListBox.SelectedIndexChanged += new System.EventHandler(this.fieldListBox_Selected);
             // 
             // lnk_kml
             // 

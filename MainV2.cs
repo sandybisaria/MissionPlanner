@@ -291,6 +291,8 @@ namespace MissionPlanner
             splash.Refresh();
             Application.DoEvents();
 
+            MainV2.config["test"] = "1000";
+
             // set this before we reset it
             MainV2.config["NUM_tracklength"] = "200";
 
