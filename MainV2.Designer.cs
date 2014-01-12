@@ -51,6 +51,7 @@ namespace MissionPlanner
             this.simulationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardwareSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHWConfig = new System.Windows.Forms.ToolStripButton();
+            this.configTuningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.MainMenu.SuspendLayout();
@@ -171,6 +172,7 @@ namespace MissionPlanner
             this.MenuSWConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuSWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuSWConfig.ToolTipText = "Software Config";
+            this.MenuSWConfig.Visible = false;
             this.MenuSWConfig.Click += new System.EventHandler(this.MenuTuning_Click);
             // 
             // MenuSimulation
@@ -258,7 +260,8 @@ namespace MissionPlanner
             this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.terminalToolStripMenuItem,
             this.simulationToolStripMenuItem,
-            this.hardwareSetupToolStripMenuItem});
+            this.hardwareSetupToolStripMenuItem,
+            this.configTuningToolStripMenuItem});
             this.advancedToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.advancedToolStripMenuItem.ImageTransparentColor = System.Drawing.SystemColors.HotTrack;
             this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
@@ -302,6 +305,13 @@ namespace MissionPlanner
             this.MenuHWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuHWConfig.ToolTipText = "Hardware Config";
             this.MenuHWConfig.Click += new System.EventHandler(this.MenuSetup_Click);
+            // 
+            // configTuningToolStripMenuItem
+            // 
+            this.configTuningToolStripMenuItem.Name = "configTuningToolStripMenuItem";
+            this.configTuningToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.configTuningToolStripMenuItem.Text = "Config/Tuning";
+            this.configTuningToolStripMenuItem.Click += new System.EventHandler(this.configTuningToolStripMenuItem_Click);
             // 
             // MainV2
             // 
@@ -351,6 +361,7 @@ namespace MissionPlanner
         private System.Windows.Forms.ToolStripMenuItem terminalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simulationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hardwareSetupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configTuningToolStripMenuItem;
         //private System.Windows.Forms.ToolStripMenuItem MenuDonate;
     }
 }

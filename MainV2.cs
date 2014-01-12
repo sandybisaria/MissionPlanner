@@ -2287,5 +2287,11 @@ namespace MissionPlanner
             //CustomMessageBox.Show("hardware");
             MyView.ShowScreen("HWConfig");
         }
+
+        private void configTuningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CustomMessageBox.Show("hardware");
+            MyView.ShowScreen("SWConfig");
+        }
     }
 }
