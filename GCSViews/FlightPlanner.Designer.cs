@@ -97,8 +97,8 @@
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.BUT_Add = new MissionPlanner.Controls.MyButton();
             this.panelAction = new BSE.Windows.Forms.Panel();
-            this.BUT_deleteField = new System.Windows.Forms.Button();
-            this.BUT_addField = new System.Windows.Forms.Button();
+            this.BUT_deleteField = new MissionPlanner.Controls.MyButton();
+            this.BUT_addField = new MissionPlanner.Controls.MyButton();
             this.label17 = new System.Windows.Forms.Label();
             this.fieldListBox = new System.Windows.Forms.ListBox();
             this.lnk_kml = new System.Windows.Forms.LinkLabel();
@@ -1348,8 +1348,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem loadFromFileToolStripMenuItem1;
         private System.Windows.Forms.ListBox fieldListBox;
-        private System.Windows.Forms.Button BUT_addField;
+        private Controls.MyButton BUT_addField;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button BUT_deleteField;
+        private Controls.MyButton BUT_deleteField;
     }
 }
