@@ -80,11 +80,14 @@ namespace MissionPlanner.GCSViews
                 if (isonline && CHK_geheight.Checked)
                 {
                     TXT_homealt.Text = getGEAlt(lat, lng).ToString();
+                    if (!getGEAlt(lat, lng).ToString().Equals(srtm.getAltitude(mouseposdisplay.Lat, mouseposdisplay.Lng, MainMap.Zoom).ToString("0")))
+                        TXT_homealt.Text = srtm.getAltitude(mouseposdisplay.Lat, mouseposdisplay.Lng, MainMap.Zoom).ToString("0");
                 }
                 else
                 {
                     // no change
                     //TXT_homealt.Text = alt.ToString();
+                    TXT_homealt.Text = srtm.getAltitude(mouseposdisplay.Lat, mouseposdisplay.Lng, MainMap.Zoom).ToString("0");
                 }
                 TXT_homelat.Text = lat.ToString();
                 TXT_homelng.Text = lng.ToString();
