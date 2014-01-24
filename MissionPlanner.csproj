@@ -655,6 +655,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigAP_Limits.it-IT.resx">
       <DependentUpon>ConfigAP_Limits.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigArducopter.it-IT.resx">
       <DependentUpon>ConfigArducopter.cs</DependentUpon>
@@ -1249,9 +1250,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigAP_Limits.de-DE.resx">
       <DependentUpon>ConfigAP_Limits.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigAP_Limits.fr.resx">
       <DependentUpon>ConfigAP_Limits.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigArducopter.de-DE.resx">
       <DependentUpon>ConfigArducopter.cs</DependentUpon>
@@ -1312,6 +1315,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigPlanner.de-DE.resx">
       <DependentUpon>ConfigPlanner.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigPlanner.fr.resx">
       <DependentUpon>ConfigPlanner.cs</DependentUpon>
@@ -1399,6 +1403,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.de-DE.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\Help.de-DE.resx">
       <DependentUpon>Help.cs</DependentUpon>
@@ -1618,6 +1623,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigAP_Limits.resx">
       <DependentUpon>ConfigAP_Limits.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\ConfigurationView\ConfigMount.resx">
       <DependentUpon>ConfigMount.cs</DependentUpon>
@@ -1633,6 +1639,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.es-ES.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\Help.es-ES.resx">
       <DependentUpon>Help.cs</DependentUpon>
@@ -1699,9 +1706,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.it-IT.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.pl.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.zh-TW.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
@@ -2169,6 +2178,7 @@
     <Content Include="mpdesktop.ico" />
     <Content Include="ParameterMetaDataBackup.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\APM_rover-firmware.png" />
     <None Include="Resources\frames-h.png" />

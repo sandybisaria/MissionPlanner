@@ -3122,11 +3122,23 @@ namespace MissionPlanner.GCSViews
                 return;
             }
 
-            string minalts = (int.Parse(MainV2.comPort.MAV.param["FENCE_MINALT"].ToString()) * MainV2.comPort.MAV.cs.multiplierdist).ToString("0");
+            try
+            {
+
+                CustomMessageBox.Show(MainV2.comPort.MAV.param["FENCE_MINALT"].ToString());
+                string minalts1 = (int.Parse(MainV2.comPort.MAV.param["FENCE_MINALT"].ToString()) * MainV2.comPort.MAV.cs.multiplierdist).ToString("0");
+            }
+            catch
+            {
+                CustomMessageBox.Show("can't get Fence_minalt");
+            }
+            //if (System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Min Alt", "Box Minimum Altitude?", ref minalts))
+              //  return;
+            string minalts = "10";
             if (System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Min Alt", "Box Minimum Altitude?", ref minalts))
                 return;
 
-            string maxalts = (int.Parse(MainV2.comPort.MAV.param["FENCE_MAXALT"].ToString()) * MainV2.comPort.MAV.cs.multiplierdist).ToString("0");
+            string maxalts = "40";//= (int.Parse(MainV2.comPort.MAV.param["FENCE_MAXALT"].ToString()) * MainV2.comPort.MAV.cs.multiplierdist).ToString("0");
             if (System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Max Alt", "Box Maximum Altitude?", ref maxalts))
                 return;
 
@@ -4705,7 +4717,7 @@ namespace MissionPlanner.GCSViews
         {
             /*if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane) //TODO allow ArduCopter and test
             {
-                geoFenceToolStripMenuItem.Enabled = false;
+                geoFenceToolStripMenuItem.Enabled = true;
             }
             else
             {
