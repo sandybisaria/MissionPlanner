@@ -584,7 +584,7 @@
             this.Controls.Add(this.CMB_language);
             this.Controls.Add(this.label93);
             this.Controls.Add(this.CHK_enablespeech);
-            //this.Controls.Add(this.CHK_hudshow);
+            this.Controls.Add(this.CHK_hudshow);
             this.Controls.Add(this.label92);
             this.Controls.Add(this.CMB_videosources);
             this.Controls.Add(this.BUT_Joystick);
