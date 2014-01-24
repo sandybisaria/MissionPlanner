@@ -4703,14 +4703,15 @@ namespace MissionPlanner.GCSViews
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane) //TODO allow ArduCopter and test
+            /*if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane) //TODO allow ArduCopter and test
             {
                 geoFenceToolStripMenuItem.Enabled = false;
             }
             else
             {
                 geoFenceToolStripMenuItem.Enabled = true;
-            }
+            }*/
+            geoFenceToolStripMenuItem.Enabled = true;
         }
 
         private void areaToolStripMenuItem_Click(object sender, EventArgs e)
