@@ -5239,5 +5239,10 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
                 double.Parse(fieldLng[fieldListBox.SelectedItem.ToString()].ToString()));
         }
 
+        private void lnk_centerHomeClicked(object sender, EventArgs e)
+        {
+            MainMap.Position = new PointLatLng(double.Parse(TXT_homelat.Text), double.Parse(TXT_homelng.Text));
+        }
+
     }
 }

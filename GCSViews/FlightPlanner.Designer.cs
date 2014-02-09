@@ -170,6 +170,7 @@
             this.panelBASE = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lnk_centerHome = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -715,6 +716,7 @@
             // 
             // panelMap
             // 
+            this.panelMap.Controls.Add(this.lnk_centerHome);
             this.panelMap.Controls.Add(this.lbl_distance);
             this.panelMap.Controls.Add(this.lbl_homedist);
             this.panelMap.Controls.Add(this.lbl_prevdist);
@@ -1189,6 +1191,13 @@
             this.timer1.Interval = 1200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lnk_centerHome
+            // 
+            resources.ApplyResources(this.lnk_centerHome, "lnk_centerHome");
+            this.lnk_centerHome.Name = "lnk_centerHome";
+            this.lnk_centerHome.TabStop = true;
+            this.lnk_centerHome.Click += new System.EventHandler(this.lnk_centerHomeClicked);
+            // 
             // FlightPlanner
             // 
             resources.ApplyResources(this, "$this");
@@ -1351,5 +1360,6 @@
         private Controls.MyButton BUT_addField;
         private System.Windows.Forms.Label label17;
         private Controls.MyButton BUT_deleteField;
+        private System.Windows.Forms.LinkLabel lnk_centerHome;
     }
 }
