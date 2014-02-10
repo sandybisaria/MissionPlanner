@@ -471,7 +471,7 @@ namespace MissionPlanner
             //    MainV2.config["fixparams"] = 1;
             }
 
-
+            
            
         }
 

@@ -2649,7 +2649,9 @@ print 'Roll complete'
             {
                 if (sc.Name == "FlightPlanner")
                 {
-                    MyButton but = new MyButton() { Location = new Point(splitContainer1.Panel2.Width / 2, 0), Text = "Close" };
+                    MyButton but = new MyButton() { Location = new Point(splitContainer1.Panel2.Width * 68 / 100, 0), Text = "Return to Planner" };
+                    but.Width += 30;
+                    but.Anchor = (AnchorStyles.Top | AnchorStyles.Right); 
                     but.Click += new EventHandler(but_Click);
 
                     splitContainer1.Panel2.Controls.Add(but);
