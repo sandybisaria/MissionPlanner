@@ -995,7 +995,7 @@ namespace MissionPlanner
                         break;
                     }
 
-                    if (!MONO)
+                    else //else?
                     {
                         //joystick stuff
 
