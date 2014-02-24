@@ -2719,6 +2719,7 @@ namespace MissionPlanner.GCSViews
             {
                 CustomMessageBox.Show("If you're at the field, connect to your APM and wait for GPS lock. Then click 'Home Location' link to set home to your location");
                 CustomMessageBox.Show("Altitude set to 100. Home location set to map position");
+                sethome = true;
                 TXT_homelat.Text = MainMap.Position.Lat.ToString();
                 TXT_homelng.Text = MainMap.Position.Lng.ToString();
             }

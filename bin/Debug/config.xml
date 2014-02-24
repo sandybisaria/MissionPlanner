@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Config>
+  <comport>AUTO</comport>
+  <baudrate>115200</baudrate>
+  <APMFirmware>ArduPlane</APMFirmware>
+  <maplast_zoom>3</maplast_zoom>
+  <FlightSplitter>358</FlightSplitter>
+  <NUM_tracklength>200</NUM_tracklength>
+  <menu_autohide>false</menu_autohide>
+  <test>1000</test>
+  <MainLocY>-8</MainLocY>
+  <maplast_lat>0</maplast_lat>
+  <quickView3>battery_remaining</quickView3>
+  <Tuning_Graph_Selected>roll|pitch|nav_roll|nav_pitch|</Tuning_Graph_Selected>
+  <MapType>GoogleHybridMap</MapType>
+  <MainHeight>1056</MainHeight>
+  <MainLocX>-8</MainLocX>
+  <guid>8f744552-4f8d-4457-b943-01a311c27f18</guid>
+  <MainWidth>1936</MainWidth>
+  <maplast_lng>0</maplast_lng>
+  <MainMaximised>Maximized</MainMaximised>
+  <update_check>2/16/2014</update_check>
+</Config>
