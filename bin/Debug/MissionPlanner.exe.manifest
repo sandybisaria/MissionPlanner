@@ -4,7 +4,7 @@
   <description asmv2:iconFile="mpdesktop.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="MissionPlanner" version="1.1.5160.27545" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="MissionPlanner" version="1.1.5168.27398" language="neutral" processorArchitecture="x86" />
     <commandLine file="MissionPlanner.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -380,13 +380,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MissionPlanner.exe" size="6154752">
-      <assemblyIdentity name="MissionPlanner" version="1.1.5160.27545" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="MissionPlanner" version="1.1.5168.27398" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>maiYjKizB6VPSDwqUmvvLR47kJ4=</dsig:DigestValue>
+        <dsig:DigestValue>J4sPmIT3YdYB1kV0TFxt5l/3f7o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

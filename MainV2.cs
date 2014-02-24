@@ -648,23 +648,23 @@ namespace MissionPlanner
                         MyView.ShowScreen("SWConfig");
                 }
 
-            try
-            {
-                System.Threading.ThreadPool.QueueUserWorkItem((WaitCallback)delegate
+                try
                 {
-                    try
+                    System.Threading.ThreadPool.QueueUserWorkItem((WaitCallback)delegate
                     {
-                        MissionPlanner.Log.LogSort.SortLogs(Directory.GetFiles(MainV2.LogDir, "*.tlog"));
+                        try
+                        {
+                            MissionPlanner.Log.LogSort.SortLogs(Directory.GetFiles(MainV2.LogDir, "*.tlog"));
+                        }
+                        catch { }
                     }
-                    catch { }
+                    );
                 }
-                );
-            }
-            catch { }
-			
+                catch { }
+
                 this.MenuConnect.Image = global::MissionPlanner.Properties.Resources.light_connect_icon;
             }
-            else
+            else //This is a connect
             {
                 switch (_connectionControl.CMB_serialport.Text)
                 {
@@ -707,8 +707,9 @@ namespace MissionPlanner
                         {
                             System.Threading.Thread.Sleep(100);
 
-                            if (DateTime.Now > deadline) {
-                                CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected");
+                            if (DateTime.Now > deadline)
+                            {
+                                CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
                                 _connectionControl.IsConnected(false);
                                 return;
                             }
@@ -734,11 +735,11 @@ namespace MissionPlanner
                     // prevent serialreader from doing anything
                     comPort.giveComport = true;
 
-                        // reset on connect logic.
-                        if (config["CHK_resetapmonconnect"] == null || bool.Parse(config["CHK_resetapmonconnect"].ToString()) == true)
-                            comPort.BaseStream.toggleDTR();
+                    // reset on connect logic.
+                    if (config["CHK_resetapmonconnect"] == null || bool.Parse(config["CHK_resetapmonconnect"].ToString()) == true)
+                        comPort.BaseStream.toggleDTR();
 
-                        comPort.giveComport = false;
+                    comPort.giveComport = false;
 
                     // setup to record new logs
                     try
@@ -778,15 +779,15 @@ namespace MissionPlanner
                     }
 
                     MissionPlanner.Utilities.Tracking.AddEvent("Connect", "Connect", comPort.MAV.cs.firmware.ToString(), comPort.MAV.param.Count.ToString());
-                    MissionPlanner.Utilities.Tracking.AddTiming("Connect", "Connect Time", (DateTime.Now - connecttime).TotalMilliseconds,"");
+                    MissionPlanner.Utilities.Tracking.AddTiming("Connect", "Connect Time", (DateTime.Now - connecttime).TotalMilliseconds, "");
 
-                    MissionPlanner.Utilities.Tracking.AddEvent("Connect", "Baud", comPort.BaseStream.BaudRate.ToString(),"");
+                    MissionPlanner.Utilities.Tracking.AddEvent("Connect", "Baud", comPort.BaseStream.BaudRate.ToString(), "");
 
                     // save the baudrate for this port
                     config[_connectionControl.CMB_serialport.Text + "_BAUD"] = _connectionControl.CMB_baudrate.Text;
 
                     // refresh config window if needed
-                    if (MyView.current != null) 
+                    if (MyView.current != null)
                     {
                         if (MyView.current.Name == "HWConfig")
                             MyView.ShowScreen("HWConfig");

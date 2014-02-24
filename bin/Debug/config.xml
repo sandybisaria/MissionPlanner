@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Config>
-  <comport>AUTO</comport>
-  <baudrate>115200</baudrate>
-  <APMFirmware>ArduPlane</APMFirmware>
-  <maplast_zoom>3</maplast_zoom>
-  <FlightSplitter>358</FlightSplitter>
-  <NUM_tracklength>200</NUM_tracklength>
-  <menu_autohide>false</menu_autohide>
-  <test>1000</test>
-  <MainLocY>-8</MainLocY>
-  <maplast_lat>0</maplast_lat>
-  <quickView3>battery_remaining</quickView3>
-  <Tuning_Graph_Selected>roll|pitch|nav_roll|nav_pitch|</Tuning_Graph_Selected>
+  <comport>COM3</comport>
+  <baudrate>57600</baudrate>
+  <APMFirmware>ArduCopter2</APMFirmware>
   <MapType>GoogleHybridMap</MapType>
-  <MainHeight>1056</MainHeight>
-  <MainLocX>-8</MainLocX>
-  <guid>8f744552-4f8d-4457-b943-01a311c27f18</guid>
-  <MainWidth>1936</MainWidth>
-  <maplast_lng>0</maplast_lng>
+  <TXT_loiterrad>45</TXT_loiterrad>
+  <maplast_lat>0</maplast_lat>
+  <Tracker_TRK_tilttrim>0</Tracker_TRK_tilttrim>
   <MainMaximised>Maximized</MainMaximised>
-  <update_check>2/16/2014</update_check>
+  <COM3_BAUD>57600</COM3_BAUD>
+  <theme>BurntKermit</theme>
+  <FlightSplitter>358</FlightSplitter>
+  <Tracker_CMB_baudrate />
+  <NUM_tracklength>200</NUM_tracklength>
+  <TXT_WPRad>30</TXT_WPRad>
+  <Tracker_TXT_pwmrangetilt>1000</Tracker_TXT_pwmrangetilt>
+  <Tracker_CHK_revtilt>False</Tracker_CHK_revtilt>
+  <quickView3>battery_remaining</quickView3>
+  <maplast_lng>0</maplast_lng>
+  <Tracker_CMB_interface>Maestro</Tracker_CMB_interface>
+  <TXT_homelng />
+  <Tracker_CMB_serialport />
+  <MainHeight>1056</MainHeight>
+  <guid>8f744552-4f8d-4457-b943-01a311c27f18</guid>
+  <Tracker_TRK_pantrim>0</Tracker_TRK_pantrim>
+  <Tracker_TXT_centerpan>1500</Tracker_TXT_centerpan>
+  <menu_autohide>false</menu_autohide>
+  <Tracker_TXT_centertilt>1500</Tracker_TXT_centertilt>
+  <CHK_altmode>False</CHK_altmode>
+  <Tracker_CHK_revpan>False</Tracker_CHK_revpan>
+  <update_check>2/24/2014</update_check>
+  <MainLocX>-8</MainLocX>
+  <TXT_DefaultAlt>100</TXT_DefaultAlt>
+  <MainWidth>1936</MainWidth>
+  <Tracker_TXT_tiltrange>90</Tracker_TXT_tiltrange>
+  <test>1000</test>
+  <maplast_zoom>3</maplast_zoom>
+  <TXT_homelat />
+  <MainLocY>-8</MainLocY>
+  <TXT_homealt />
+  <Tuning_Graph_Selected>roll|pitch|nav_roll|nav_pitch|</Tuning_Graph_Selected>
+  <Tracker_TXT_panrange>360</Tracker_TXT_panrange>
+  <Tracker_TXT_pwmrangepan>1000</Tracker_TXT_pwmrangepan>
 </Config>
