@@ -7,14 +7,14 @@ using System.IO;
 using System.Windows.Forms; 
 using System.Threading;
 using MissionPlanner;
-
+/*
 namespace MissionPlanner
 {
     public class ScriptVideoInterface
     {
 
         Script script = new Script();
-
+        bool scriptRunning = false;
         DateTime timeout = DateTime.Now;
         static Microsoft.Scripting.Hosting.ScriptEngine engine;
         static Microsoft.Scripting.Hosting.ScriptScope scope;
@@ -23,7 +23,7 @@ namespace MissionPlanner
         {
             while (true)
             {
-                script.runScript(script);
+                script.runScript(Commands);
             }
         }
 
@@ -43,6 +43,12 @@ namespace MissionPlanner
             }
         }
 
+        void run_selected_script()
+        {
+            script = new Script(true);//checkBoxRedirectOutput.Checked);
+            script.runScript(scriptText);
+            //scriptrunning = false;
+        }
 
         private void BUT_run_script_Click(object sender, EventArgs e)
         {
@@ -64,13 +70,13 @@ namespace MissionPlanner
                 IsBackground = true,
                 Name = "Script Thread (new)"
             };
-            labelScriptStatus.Text = "Script Status: Running";
+            //labelScriptStatus.Text = "Script Status: Running";
 
             script = null;
-            outputwindowstarted = false;
+            //outputwindowstarted = false;
 
             scriptThread.Start();
-            scriptrunning = true;
+            scriptRunning = true;
             scriptChecker.Enabled = true;
             checkBoxRedirectOutput.Enabled = false;
 
@@ -80,4 +86,4 @@ namespace MissionPlanner
         }
 
     }
-}
+}*/
