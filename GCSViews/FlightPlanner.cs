@@ -305,7 +305,7 @@ namespace MissionPlanner.GCSViews
             InitializeComponent();
 
             // config map             
-            MainMap.MapProvider = GoogleSatelliteMapProvider.Instance;
+            MainMap.MapProvider = GoogleHybridMapProvider.Instance;
             MainMap.CacheLocation = Path.GetDirectoryName(Application.ExecutablePath) + "/gmapcache/";
 
             // map events
