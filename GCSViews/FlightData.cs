@@ -372,6 +372,103 @@ namespace MissionPlanner.GCSViews
             //   tabStatus.ResumeLayout();
         }
 
+        void tabMotors_Resize(object sender, EventArgs e)
+        {
+            
+
+            int x = 10;
+            int y = 10;
+
+            object thisBoxed = MainV2.comPort.MAV.cs;
+            Type test = thisBoxed.GetType();
+
+            PropertyInfo[] props = test.GetProperties();
+            PropertyInfo[] motorProps = {test.GetProperty("ch1out"), test.GetProperty("ch2out"), test.GetProperty("ch3out"),
+                                        test.GetProperty("ch4out"), test.GetProperty("ch5out"), test.GetProperty("ch6out"),
+                                        test.GetProperty("ch7out"), test.GetProperty("ch8out")
+                                        };
+
+           /* for (var field in props.)
+            {
+                if(field.ToString().Equals("
+            }*/
+            //props
+            foreach (var field in motorProps)
+            {
+                // field.Name has the field's name.
+                object fieldValue;
+                TypeCode typeCode;
+                try
+                {
+                    fieldValue = field.GetValue(thisBoxed, null); // Get value
+
+                    // Get the TypeCode enumeration. Multiple types get mapped to a common typecode.
+                    typeCode = Type.GetTypeCode(fieldValue.GetType());
+
+                }
+                catch { continue; }
+
+                bool add = true;
+
+                MyLabel lbl1 = new MyLabel();
+                MyLabel lbl2 = new MyLabel();
+                try
+                {
+                    lbl1 = (MyLabel)tabMotors.Controls.Find(field.Name, false)[0];
+
+                    lbl2 = (MyLabel)tabMotors.Controls.Find(field.Name + "value", false)[0];
+
+                    add = false;
+                }
+                catch { }
+
+                if (add)
+                {
+
+                    lbl1.Location = new Point(x, y);
+                    lbl1.Size = new System.Drawing.Size(150, 26);
+                    lbl1.Text = field.Name;
+                    lbl1.Name = field.Name;
+                    lbl1.Visible = true;
+                    lbl2.AutoSize = false;
+
+                    lbl2.Location = new Point(lbl1.Right + 13, y);
+                    lbl2.Size = new System.Drawing.Size(100, 26);
+                    //if (lbl2.Name == "")
+                    lbl2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceStatusTab, field.Name, false, System.Windows.Forms.DataSourceUpdateMode.Never, "0"));
+                    lbl2.Name = field.Name + "value";
+                    lbl2.Visible = true;
+                    //lbl2.Text = fieldValue.ToString();
+
+
+                    tabMotors.Controls.Add(lbl1);
+                    tabMotors.Controls.Add(lbl2);
+                }
+                else
+                {
+                    lbl1.Location = new Point(x, y);
+                    lbl2.Location = new Point(lbl1.Right + 13, y);
+                }
+
+                //Application.DoEvents();
+
+                x += 0;
+                y += 30;
+
+                if (y > tabMotors.Height - 30)
+                {
+                    x += 140;
+                    y = 10;
+                }
+            }
+
+            tabMotors.Width = x;
+
+            ThemeManager.ApplyThemeTo(tabMotors);
+
+            //   tabMotors.ResumeLayout();
+        }
+
         public void Activate()
         {
             log.Info("Activate Called");
@@ -1085,6 +1182,10 @@ namespace MissionPlanner.GCSViews
                             else if (tabControl1.SelectedTab == tabGauges)
                             {
                                 MainV2.comPort.MAV.cs.UpdateCurrentSettings(bindingSourceGaugesTab);
+                            }
+                            else if (tabControl1.SelectedTab == tabMotors)
+                            {
+                                MainV2.comPort.MAV.cs.UpdateCurrentSettings(bindingSourceMotorsTab);
                             }
                         }
                         else
@@ -1888,6 +1989,10 @@ namespace MissionPlanner.GCSViews
             if (tabControl1.SelectedTab == tabStatus)
             {
                 tabStatus_Resize(sender, e);
+            }
+            else if (tabControl1.SelectedTab == tabMotors)
+            {
+                tabMotors_Resize(sender, e);
             }
             else
             {
@@ -3008,6 +3113,16 @@ print 'Roll complete'
         }
 
         private void hud1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabScripts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabStatus_Click(object sender, EventArgs e)
         {
 
         }
