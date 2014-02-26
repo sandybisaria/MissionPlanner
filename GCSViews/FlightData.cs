@@ -10,6 +10,7 @@ using System.Text.RegularExpressions; // regex
 using System.Xml; // GE xml alt reader
 using System.Net; // dns, ip address
 using System.Net.Sockets; // tcplistner
+using System.Linq;
 using System.Threading;
 using GMap.NET;
 using GMap.NET.WindowsForms;
@@ -270,6 +271,13 @@ namespace MissionPlanner.GCSViews
             catch { }
 
             MainV2.comPort.ParamListChanged += FlightData_ParentChanged;
+
+            if (!Directory.EnumerateDirectories(Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + @"gmapcache"
+                    + Path.DirectorySeparatorChar + @"TileDBv3" + Path.DirectorySeparatorChar
+                    + @"en" + Path.DirectorySeparatorChar).Any())
+            {
+                CustomMessageBox.Show("The map cache is empty! Try connecting to the Internet first!");
+            }//TODO Fix this! (Or, find out what to do)
         }
    
         void tabStatus_Resize(object sender, EventArgs e)
@@ -2754,7 +2762,9 @@ print 'Roll complete'
             {
                 if (sc.Name == "FlightPlanner")
                 {
-                    MyButton but = new MyButton() { Location = new Point(splitContainer1.Panel2.Width / 2, 0), Text = "Close" };
+                    MyButton but = new MyButton() { Location = new Point(splitContainer1.Panel2.Width/2, 0), Text = "Return to Main" };
+                    but.Width += 30;
+                    but.Anchor = (AnchorStyles.Top | AnchorStyles.Right); 
                     but.Click += new EventHandler(but_Click);
 
                     splitContainer1.Panel2.Controls.Add(but);

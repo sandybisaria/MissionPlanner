@@ -1,5 +1,6 @@
 *.pfx
 *.suo
 *.user
-bin/
 obj/
+bin/
+bin/Debug/

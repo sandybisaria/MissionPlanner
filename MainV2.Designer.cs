@@ -50,8 +50,8 @@ namespace MissionPlanner
             this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simulationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardwareSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHWConfig = new System.Windows.Forms.ToolStripButton();
             this.configTuningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuHWConfig = new System.Windows.Forms.ToolStripButton();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.MainMenu.SuspendLayout();
@@ -155,6 +155,7 @@ namespace MissionPlanner
             this.MenuFlightPlanner.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MenuFlightPlanner.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuFlightPlanner.ToolTipText = "Flight Planner";
+            this.MenuFlightPlanner.Visible = false;
             this.MenuFlightPlanner.Click += new System.EventHandler(this.MenuFlightPlanner_Click);
             // 
             // MenuSWConfig
@@ -289,6 +290,13 @@ namespace MissionPlanner
             this.hardwareSetupToolStripMenuItem.Text = "Hardware Setup";
             this.hardwareSetupToolStripMenuItem.Click += new System.EventHandler(this.hardwareSetupToolStripMenuItem_Click);
             // 
+            // configTuningToolStripMenuItem
+            // 
+            this.configTuningToolStripMenuItem.Name = "configTuningToolStripMenuItem";
+            this.configTuningToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.configTuningToolStripMenuItem.Text = "Config/Tuning";
+            this.configTuningToolStripMenuItem.Click += new System.EventHandler(this.configTuningToolStripMenuItem_Click);
+            // 
             // MenuHWConfig
             // 
             this.MenuHWConfig.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -305,13 +313,6 @@ namespace MissionPlanner
             this.MenuHWConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.MenuHWConfig.ToolTipText = "Hardware Config";
             this.MenuHWConfig.Click += new System.EventHandler(this.MenuSetup_Click);
-            // 
-            // configTuningToolStripMenuItem
-            // 
-            this.configTuningToolStripMenuItem.Name = "configTuningToolStripMenuItem";
-            this.configTuningToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.configTuningToolStripMenuItem.Text = "Config/Tuning";
-            this.configTuningToolStripMenuItem.Click += new System.EventHandler(this.configTuningToolStripMenuItem_Click);
             // 
             // MainV2
             // 

@@ -133,6 +133,7 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceMotorsTab = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_flightPlanner = new MissionPlanner.Controls.MyButton();
             this.contextMenuStripMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainH)).BeginInit();
             this.MainH.Panel1.SuspendLayout();
@@ -1380,6 +1381,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.ContextMenuStrip = this.contextMenuStripMap;
+            this.splitContainer1.Panel2.Controls.Add(this.btn_flightPlanner);
             this.splitContainer1.Panel2.Controls.Add(this.windDir1);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
@@ -1685,6 +1687,12 @@
             // bindingSourceMotorsTab
             // 
             this.bindingSourceMotorsTab.DataSource = typeof(MissionPlanner.CurrentState);
+            // btn_flightPlanner
+            // 
+            resources.ApplyResources(this.btn_flightPlanner, "btn_flightPlanner");
+            this.btn_flightPlanner.Name = "btn_flightPlanner";
+            this.btn_flightPlanner.UseVisualStyleBackColor = true;
+            this.btn_flightPlanner.Click += new System.EventHandler(this.flightPlannerToolStripMenuItem_Click);
             // 
             // FlightData
             // 
@@ -1867,6 +1875,8 @@
         private Controls.WindDir windDir1;
         private Controls.MyButton but_bintolog;
         private Controls.MyButton but_dflogtokml;
+        private System.Windows.Forms.LinkLabel lnk_centerHome;
+        private Controls.MyButton btn_flightPlanner;
 
     }
 }
