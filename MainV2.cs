@@ -613,7 +613,7 @@ namespace MissionPlanner
             comPort.rawlogfile = null;
 
             // decide if this is a connect or disconnect
-            if (comPort.BaseStream.IsOpen)
+            if (comPort.BaseStream.IsOpen) //Disconnect
             {
                 try
                 {
@@ -699,9 +699,14 @@ namespace MissionPlanner
                     // do autoscan
                     if (_connectionControl.CMB_serialport.Text == "AUTO")
                     {
+                        /*ProgressBar autoscanProgress = new ProgressBar();
+                        autoscanProgress.Visible = true;
+                        autoscanProgress.Style = ProgressBarStyle.Marquee;
+                        autoscanProgress.MarqueeAnimationSpeed = 30;*/
+
                         Comms.CommsSerialScan.Scan(false);
 
-                        DateTime deadline = DateTime.Now.AddSeconds(50);
+                        DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
 
                         while (Comms.CommsSerialScan.foundport == false)
                         {
@@ -711,12 +716,14 @@ namespace MissionPlanner
                             {
                                 CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
                                 _connectionControl.IsConnected(false);
+                                //autoscanProgress.Dispose();
                                 return;
                             }
                         }
 
                         _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
                         _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
+                        //autoscanProgress.Dispose();
                     }
 
                     // set port, then options
