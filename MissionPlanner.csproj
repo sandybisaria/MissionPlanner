@@ -1401,6 +1401,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightData.de-DE.resx">
       <DependentUpon>FlightData.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\FlightPlanner.de-DE.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>

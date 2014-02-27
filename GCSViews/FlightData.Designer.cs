@@ -36,6 +36,7 @@
             this.quickView3 = new MissionPlanner.Controls.QuickView();
             this.quickView2 = new MissionPlanner.Controls.QuickView();
             this.quickView1 = new MissionPlanner.Controls.QuickView();
+            this.motorView1 = new MissionPlanner.Controls.QuickView();
             this.tabActions = new System.Windows.Forms.TabPage();
             this.CMB_mountmode = new System.Windows.Forms.ComboBox();
             this.BUT_mountmode = new MissionPlanner.Controls.MyButton();
@@ -1785,6 +1786,7 @@
         private System.Windows.Forms.TabPage tabActions;
         private System.Windows.Forms.TabPage tabTLogs;
         private System.Windows.Forms.TabPage tabMotors;
+        private Controls.QuickView motorView1;
         private System.Windows.Forms.ComboBox CMB_modes;
         private Controls.MyButton BUT_setmode;
         private System.Windows.Forms.ComboBox CMB_setwp;

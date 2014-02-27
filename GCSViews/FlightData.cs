@@ -443,9 +443,11 @@ namespace MissionPlanner.GCSViews
                     lbl2.Location = new Point(lbl1.Right + 13, y);
                     lbl2.Size = new System.Drawing.Size(100, 26);
                     //if (lbl2.Name == "")
-                    lbl2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceStatusTab, field.Name, false, System.Windows.Forms.DataSourceUpdateMode.Never, "0"));
+                    lbl2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceMotorsTab, field.Name, false, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, "0"));
                     lbl2.Name = field.Name + "value";
                     lbl2.Visible = true;
+                    //lbl2.Width = 50;
+                    //lbl2.Height = 50;
                     //lbl2.Text = fieldValue.ToString();
 
 
