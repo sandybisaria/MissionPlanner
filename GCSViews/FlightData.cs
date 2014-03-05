@@ -420,12 +420,12 @@ namespace MissionPlanner.GCSViews
 
                 bool add = true;
 
-                MyLabel lbl1 = new MyLabel();
-                MyLabel lbl2 = new MyLabel();
+                System.Windows.Forms.Label lbl1 = new System.Windows.Forms.Label();
+                System.Windows.Forms.Label lbl2 = new System.Windows.Forms.Label();
                 try
                 {
-                    lbl1 = (MyLabel)tabMotors.Controls.Find(field.Name, false)[0];
-                    lbl1.Text = "Motor "+lbl1.Text.ElementAt(2);
+                    //lbl1 = (MyLabel)tabMotors.Controls.Find(field.Name, false)[0];
+                    
 
                     Control valueField = tabMotors.Controls.Find(field.Name + "value", false)[0];
                     String valueText = valueField.Text;
@@ -433,7 +433,14 @@ namespace MissionPlanner.GCSViews
                     valueField.Text = "" + value;
 
 
-                    lbl2 = (MyLabel)valueField; //tabMotors.Controls.Find(field.Name + "value", false)[0];
+                    //lbl2 = (MyLabel)valueField; //tabMotors.Controls.Find(field.Name + "value", false)[0];
+
+                    lbl1 = (System.Windows.Forms.Label)tabMotors.Controls.Find(field.Name, false)[0];
+                    lbl1.Text = "Motor "+lbl1.Text.ElementAt(2);
+
+                    lbl2 = (System.Windows.Forms.Label)tabMotors.Controls.Find(field.Name + "value", false)[0];
+                    lbl2 = (System.Windows.Forms.Label)valueField;
+
 
                     add = false;
                 }
@@ -460,8 +467,11 @@ namespace MissionPlanner.GCSViews
                     //lbl2.Width = 50;
                     //lbl2.Height = 50;
                     //lbl2.Text = fieldValue.ToString();
-                    //lbl2.Font.Height = 50;
+                    lbl1.Font = new Font(lbl1.Font.FontFamily, 20);
+                    lbl2.Font = new Font(lbl2.Font.FontFamily, 20);
 
+                    ThemeManager.ApplyThemeTo(lbl1);
+                    ThemeManager.ApplyThemeTo(lbl2);
 
                     tabMotors.Controls.Add(lbl1);
                     tabMotors.Controls.Add(lbl2);
@@ -2025,10 +2035,10 @@ namespace MissionPlanner.GCSViews
                     //  tabStatus.Controls.Remove(temp);
                // }
 
-                if (tabControl1.SelectedTab == tabQuick)
+                /*if (tabControl1.SelectedTab == tabQuick)
                 {
 
-                }
+                }*/
             }
 
         }

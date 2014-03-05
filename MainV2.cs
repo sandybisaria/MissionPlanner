@@ -699,31 +699,57 @@ namespace MissionPlanner
                     // do autoscan
                     if (_connectionControl.CMB_serialport.Text == "AUTO")
                     {
-                        /*ProgressBar autoscanProgress = new ProgressBar();
-                        autoscanProgress.Visible = true;
-                        autoscanProgress.Style = ProgressBarStyle.Marquee;
-                        autoscanProgress.MarqueeAnimationSpeed = 30;*/
+                        ///*ProgressBar autoscanProgress = new ProgressBar();
+                        //autoscanProgress.Visible = true;
+                        //autoscanProgress.Style = ProgressBarStyle.Marquee;
+                        //autoscanProgress.MarqueeAnimationSpeed = 30;*/
 
-                        Comms.CommsSerialScan.Scan(false);
+                        //Comms.CommsSerialScan.Scan(false);
 
-                        DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
+                        //DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
 
-                        while (Comms.CommsSerialScan.foundport == false)
+                        //while (Comms.CommsSerialScan.foundport == false)
+                        //{
+                        //    System.Threading.Thread.Sleep(100);
+
+                        //    if (DateTime.Now > deadline)
+                        //    {
+                        //        CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
+                        //        _connectionControl.IsConnected(false);
+                        //        //autoscanProgress.Dispose();
+                        //        return;
+                        //    }
+                        //}
+
+                        //_connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
+                        //_connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
+                        ////autoscanProgress.Dispose();
+                        using (ProgressBar autoscanProgress = new ProgressBar())
                         {
-                            System.Threading.Thread.Sleep(100);
+                            autoscanProgress.Style = ProgressBarStyle.Marquee;
+                            autoscanProgress.MarqueeAnimationSpeed = 30;
+                            autoscanProgress.Show();
 
-                            if (DateTime.Now > deadline)
+                            Comms.CommsSerialScan.Scan(false);
+
+                            DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
+
+                            while (Comms.CommsSerialScan.foundport == false)
                             {
-                                CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
-                                _connectionControl.IsConnected(false);
-                                //autoscanProgress.Dispose();
-                                return;
-                            }
-                        }
+                                System.Threading.Thread.Sleep(100);
 
-                        _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
-                        _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
-                        //autoscanProgress.Dispose();
+                                if (DateTime.Now > deadline)
+                                {
+                                    CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
+                                    _connectionControl.IsConnected(false);
+                                    //autoscanProgress.Dispose();
+                                    return;
+                                }
+                            }
+
+                            _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
+                            _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
+                        }
                     }
 
                     // set port, then options
