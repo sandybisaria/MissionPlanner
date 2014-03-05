@@ -425,8 +425,15 @@ namespace MissionPlanner.GCSViews
                 try
                 {
                     lbl1 = (MyLabel)tabMotors.Controls.Find(field.Name, false)[0];
+                    lbl1.Text = "Motor "+lbl1.Text.ElementAt(2);
 
-                    lbl2 = (MyLabel)tabMotors.Controls.Find(field.Name + "value", false)[0];
+                    Control valueField = tabMotors.Controls.Find(field.Name + "value", false)[0];
+                    String valueText = valueField.Text;
+                    int value = (Convert.ToInt32(valueText)/2200)*100;//2200 = max PWM --- converts to %
+                    valueField.Text = "" + value;
+
+
+                    lbl2 = (MyLabel)valueField; //tabMotors.Controls.Find(field.Name + "value", false)[0];
 
                     add = false;
                 }
@@ -441,6 +448,8 @@ namespace MissionPlanner.GCSViews
                     lbl1.Name = field.Name;
                     lbl1.Visible = true;
                     lbl2.AutoSize = false;
+
+                    lbl1.Text = "Motor " + lbl1.Text.ElementAt(2);
 
                     lbl2.Location = new Point(lbl1.Right + 13, y);
                     lbl2.Size = new System.Drawing.Size(100, 26);

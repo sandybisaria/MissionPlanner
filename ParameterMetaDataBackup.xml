@@ -211,7 +211,7 @@
       <Description>dead zone around trim.</Description>
       <User>Advanced</User>
     </RC2_DZ>
-    <>
+    <RC3_MIN>
       <DisplayName>RC min PWM</DisplayName>
       <Description>RC minimum PWM pulse width. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</Description>
       <Units>ms</Units>
