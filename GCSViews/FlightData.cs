@@ -74,6 +74,8 @@ namespace MissionPlanner.GCSViews
 
         Dictionary<Guid, Form> formguids = new Dictionary<Guid, Form>();
 
+        ScriptVideoInterface videoInterface;
+
         bool huddropout = false;
         bool huddropoutresize = false;
 
@@ -449,6 +451,7 @@ namespace MissionPlanner.GCSViews
                     //lbl2.Width = 50;
                     //lbl2.Height = 50;
                     //lbl2.Text = fieldValue.ToString();
+                    //lbl2.Font.Height = 50;
 
 
                     tabMotors.Controls.Add(lbl1);
@@ -2983,6 +2986,19 @@ print 'Roll complete'
             checkBoxRedirectOutput.Enabled = false;
         }
 
+        //private void BUT_run_script_Click(object sender, EventArgs e)
+        //{
+         //   ScriptVideoInterface videoInterface = new ScriptVideoInterface();
+        //}
+        private void BUT_run_back_script_Click(object sender, EventArgs e)
+        {
+            videoInterface = new ScriptVideoInterface();
+            videoInterface.startScriptThread();
+            BUT_run_back_script.Enabled = false;
+            BUT_abort_background_script.Visible = true;
+
+        }
+
         void run_selected_script()
         {
             script = new Script(checkBoxRedirectOutput.Checked);
@@ -3019,6 +3035,14 @@ print 'Roll complete'
             scriptthread.Abort();
             scriptrunning = false;
             BUT_abort_script.Visible = false;
+        }
+        private void BUT_abort_background_script_Click(object sender, EventArgs e)
+        {
+            videoInterface.abortScript();
+            scriptrunning = false;
+            BUT_abort_script.Visible = false;
+            BUT_abort_background_script.Visible = false;
+            BUT_run_back_script.Enabled = true;
         }
 
         private void BUT_edit_selected_Click(object sender, EventArgs e)
@@ -3138,5 +3162,11 @@ print 'Roll complete'
         {
 
         }
+
+        private void tabMotors_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

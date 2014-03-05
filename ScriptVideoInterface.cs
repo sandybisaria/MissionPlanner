@@ -7,30 +7,39 @@ using System.IO;
 using System.Windows.Forms; 
 using System.Threading;
 using MissionPlanner;
-/*
+
 namespace MissionPlanner
 {
     public class ScriptVideoInterface
     {
+
+        string command;
+        Thread scriptThread;
+        System.Threading.Timer timerThread;
 
         Script script = new Script();
         bool scriptRunning = false;
         DateTime timeout = DateTime.Now;
         static Microsoft.Scripting.Hosting.ScriptEngine engine;
         static Microsoft.Scripting.Hosting.ScriptScope scope;
+        //private System.Windows.Forms.Timer scriptChecker;
 
-        public void startVideoRead()
+        /*public void startVideoRead()
         {
+            //this.scriptChecker = new System.Windows.Forms.Timer(this.components);
+            //this.scriptChecker.Tick += new System.EventHandler(this.scriptChecker_Tick);
             while (true)
             {
-                script.runScript(Commands);
+                script.runScript(command);
+                Console.WriteLine("script running: %s", command);
             }
-        }
+        }*/
 
         public void turn(String dir)
         {
+            Console.WriteLine("direction: %s", dir);
             switch(dir)
-            {
+            {                    
                 case "right":
                     script.SendRC(4, 2000, true);
                     break;
@@ -45,15 +54,18 @@ namespace MissionPlanner
 
         void run_selected_script()
         {
-            script = new Script(true);//checkBoxRedirectOutput.Checked);
-            script.runScript(scriptText);
+            CustomMessageBox.Show("script test");
+
+            //script = new Script(true);//checkBoxRedirectOutput.Checked);
+            //script.runScript(command);
+
+
             //scriptrunning = false;
         }
 
-        private void BUT_run_script_Click(object sender, EventArgs e)
+        void run_selected_script_callback(Object state)
         {
-            Thread scriptThread;
-            string command;
+            timerThread.Change(Timeout.Infinite, Timeout.Infinite);
 
             try
             {
@@ -65,11 +77,34 @@ namespace MissionPlanner
                 return;
             }
 
+
+            CustomMessageBox.Show("script callback thread: " + command);
+            timerThread.Change(3000, Timeout.Infinite);
+            //timerThread.Dispose();            
+            
+        }
+
+        public void startScriptThread()//object sender, EventArgs e)
+        {          
+            
+
+            /*try
+            {
+                command = File.ReadAllText("videoDirections.txt");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open script file due to exception: " + ex.Message);
+                return;
+            }*/
+
             scriptThread = new System.Threading.Thread(new System.Threading.ThreadStart(run_selected_script))
             {
                 IsBackground = true,
                 Name = "Script Thread (new)"
             };
+
+            timerThread = new System.Threading.Timer(run_selected_script_callback, null, 0, 1000);
             //labelScriptStatus.Text = "Script Status: Running";
 
             script = null;
@@ -77,13 +112,49 @@ namespace MissionPlanner
 
             scriptThread.Start();
             scriptRunning = true;
-            scriptChecker.Enabled = true;
-            checkBoxRedirectOutput.Enabled = false;
+            CustomMessageBox.Show("script thread started");
+            //scriptChecker.Enabled = true;
+            //checkBoxRedirectOutput.Enabled = false;
 
 
             //remember this
-            scriptThread.Abort();
+            //scriptThread.Abort();
         }
 
+        public void abortScript()//(object sender, EventArgs e)
+        {
+            scriptThread.Abort();
+            timerThread.Dispose();
+            scriptRunning = false;
+            CustomMessageBox.Show("aborted background script");
+           // BUT_abort_script.Visible = false;
+        }
+        /*private void scriptChecker_Tick(object sender, EventArgs e)
+        {
+            if (!scriptRunning)
+            {
+                //labelScriptStatus.Text = "Script Status: Finished (or aborted)";
+                CustomMessageBox.Show("script done");
+                scriptChecker.Enabled = false;
+                BUT_select_script.Enabled = true;
+                BUT_run_script.Enabled = true;
+                BUT_abort_script.Visible = false;
+                BUT_edit_selected.Enabled = true;
+                checkBoxRedirectOutput.Enabled = true;
+            }
+            else if ((script != null) && (checkBoxRedirectOutput.Checked) && (!outputwindowstarted))
+            {
+                outputwindowstarted = true;
+
+                ScriptConsole console = new ScriptConsole();
+                console.SetScript(script);
+                ThemeManager.ApplyThemeTo((Form)console);
+                console.Show();
+                console.BringToFront();
+            }
+        }*/
+
     }
-}*/
+
+   
+}
