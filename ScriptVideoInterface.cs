@@ -79,7 +79,11 @@ namespace MissionPlanner
 
 
             CustomMessageBox.Show("script callback thread: " + command);
-            timerThread.Change(3000, Timeout.Infinite);
+
+            //*******************Put back in for testing 
+            //turn(command);
+
+            timerThread.Change(2000, Timeout.Infinite);
             //timerThread.Dispose();            
             
         }
@@ -98,11 +102,11 @@ namespace MissionPlanner
                 return;
             }*/
 
-            scriptThread = new System.Threading.Thread(new System.Threading.ThreadStart(run_selected_script))
+            /*scriptThread = new System.Threading.Thread(new System.Threading.ThreadStart(run_selected_script))
             {
                 IsBackground = true,
                 Name = "Script Thread (new)"
-            };
+            };*/
 
             timerThread = new System.Threading.Timer(run_selected_script_callback, null, 0, 1000);
             //labelScriptStatus.Text = "Script Status: Running";
@@ -110,7 +114,7 @@ namespace MissionPlanner
             script = null;
             //outputwindowstarted = false;
 
-            scriptThread.Start();
+            //scriptThread.Start();
             scriptRunning = true;
             CustomMessageBox.Show("script thread started");
             //scriptChecker.Enabled = true;
@@ -123,7 +127,7 @@ namespace MissionPlanner
 
         public void abortScript()//(object sender, EventArgs e)
         {
-            scriptThread.Abort();
+            //scriptThread.Abort();
             timerThread.Dispose();
             scriptRunning = false;
             CustomMessageBox.Show("aborted background script");
