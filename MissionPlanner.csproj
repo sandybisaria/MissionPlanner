@@ -436,6 +436,12 @@
     <Compile Include="Log\MatLab.cs" />
     <Compile Include="Magfitrotation.cs" />
     <Compile Include="MagMotor.cs" />
+    <Compile Include="MarqueeBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarqueeBar.Designer.cs">
+      <DependentUpon>MarqueeBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BattMonitor.cs" />
     <Compile Include="Plugin\Plugin.cs" />
     <Compile Include="Plugin\PluginLoader.cs" />
@@ -828,6 +834,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenOTP.resx">
       <DependentUpon>GenOTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarqueeBar.resx">
+      <DependentUpon>MarqueeBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plugin\PluginUI.resx">
       <DependentUpon>PluginUI.cs</DependentUpon>
