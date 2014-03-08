@@ -717,8 +717,7 @@ namespace MissionPlanner
 
                         _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
                         _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
-                        }
-                    } catch (Exception exp) { log.Error(exp); }
+                    }
 
                     // set port, then options
                     comPort.BaseStream.PortName = _connectionControl.CMB_serialport.Text;
