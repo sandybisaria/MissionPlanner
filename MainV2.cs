@@ -699,58 +699,26 @@ namespace MissionPlanner
                     // do autoscan
                     if (_connectionControl.CMB_serialport.Text == "AUTO")
                     {
-                        ///*ProgressBar autoscanProgress = new ProgressBar();
-                        //autoscanProgress.Visible = true;
-                        //autoscanProgress.Style = ProgressBarStyle.Marquee;
-                        //autoscanProgress.MarqueeAnimationSpeed = 30;*/
+                        Comms.CommsSerialScan.Scan(false);
 
-                        //Comms.CommsSerialScan.Scan(false);
+                        DateTime deadline = DateTime.Now.AddSeconds(20);
 
-                        //DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
-
-                        //while (Comms.CommsSerialScan.foundport == false)
-                        //{
-                        //    System.Threading.Thread.Sleep(100);
-
-                        //    if (DateTime.Now > deadline)
-                        //    {
-                        //        CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
-                        //        _connectionControl.IsConnected(false);
-                        //        //autoscanProgress.Dispose();
-                        //        return;
-                        //    }
-                        //}
-
-                        //_connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
-                        //_connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
-                        ////autoscanProgress.Dispose();
-                        using (ProgressBar autoscanProgress = new ProgressBar())
+                        while (Comms.CommsSerialScan.foundport == false)
                         {
-                            autoscanProgress.Style = ProgressBarStyle.Marquee;
-                            autoscanProgress.MarqueeAnimationSpeed = 30;
-                            autoscanProgress.Show();
+                            System.Threading.Thread.Sleep(100);
 
-                            Comms.CommsSerialScan.Scan(false);
-
-                            DateTime deadline = DateTime.Now.AddSeconds(20); //TODO Determine good amount of time to wait
-
-                            while (Comms.CommsSerialScan.foundport == false)
+                            if (DateTime.Now > deadline)
                             {
-                                System.Threading.Thread.Sleep(100);
-
-                                if (DateTime.Now > deadline)
-                                {
-                                    CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
-                                    _connectionControl.IsConnected(false);
-                                    //autoscanProgress.Dispose();
-                                    return;
-                                }
+                                CustomMessageBox.Show("Timeout waiting for autoscan/no mavlink device connected"); //TODO Timeout
+                                _connectionControl.IsConnected(false);
+                                return;
                             }
-
-                            _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
-                            _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
                         }
-                    }
+
+                        _connectionControl.CMB_serialport.Text = Comms.CommsSerialScan.portinterface.PortName;
+                        _connectionControl.CMB_baudrate.Text = Comms.CommsSerialScan.portinterface.BaudRate.ToString();
+                        }
+                    } catch (Exception exp) { log.Error(exp); }
 
                     // set port, then options
                     comPort.BaseStream.PortName = _connectionControl.CMB_serialport.Text;
