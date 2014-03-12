@@ -5260,7 +5260,7 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             if (fieldListBox.SelectedItem == null)
                 return;
             DialogResult startSprayResult = MessageBox.Show("Would you like to spray the " + fieldListBox.SelectedItem.ToString()
-                + " field?", "Spraying started", MessageBoxButtons.YesNo);
+                + " field?", "Start spraying", MessageBoxButtons.YesNo);
             if (startSprayResult == DialogResult.No)
                 return;
 
