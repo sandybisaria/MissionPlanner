@@ -22,6 +22,7 @@ namespace MissionPlanner
         DateTime timeout = DateTime.Now;
         static Microsoft.Scripting.Hosting.ScriptEngine engine;
         static Microsoft.Scripting.Hosting.ScriptScope scope;
+        CurrentState cs = new CurrentState();
         //private System.Windows.Forms.Timer scriptChecker;
 
         /*public void startVideoRead()
@@ -35,16 +36,22 @@ namespace MissionPlanner
             }
         }*/
 
+        public void testCommand()
+        {
+            script.SendRC(3, 1000, false);
+            script.SendRC(4, 1500, true);
+        }
+
         public void turn(String dir)
         {
             Console.WriteLine("direction: %s", dir);
             switch(dir)
             {                    
                 case "right":
-                    script.SendRC(4, 2000, true);
+                    script.SendRC(4, 1500, true);
                     break;
                 case "left":
-                    script.SendRC(4, 2000, true);
+                    script.SendRC(4, 2000, false);
                     break;
                 case "stop":
                     script.SendRC(3, 0, true);
@@ -81,7 +88,8 @@ namespace MissionPlanner
             CustomMessageBox.Show("script callback thread: " + command);
 
             //*******************Put back in for testing 
-            //turn(command);
+            if(cs.connected == true)
+                turn(command);
 
             timerThread.Change(2000, Timeout.Infinite);
             //timerThread.Dispose();            

@@ -5245,5 +5245,27 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             MainMap.Position = new PointLatLng(double.Parse(TXT_homelat.Text), double.Parse(TXT_homelng.Text));
         }
 
+        private void comboBoxMapType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAction_CloseClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BUT_spray_Click(object sender, EventArgs e)
+        {
+            if (fieldListBox.SelectedItem == null)
+                return;
+            DialogResult startSprayResult = MessageBox.Show("Would you like to spray the " + fieldListBox.SelectedItem.ToString()
+                + " field?", "Spraying started", MessageBoxButtons.YesNo);
+            if (startSprayResult == DialogResult.No)
+                return;
+
+        }
+
+
     }
 }
