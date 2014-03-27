@@ -842,7 +842,7 @@ namespace MissionPlanner.GCSViews
                 m.ToolTipMode = MarkerTooltipMode.Always;
                 m.ToolTipText = tag;
                 m.Tag = tag;
-
+                //CustomMessageBox.Show(tag);
                 //MissionPlanner.GMapMarkerRectWPRad mBorders = new MissionPlanner.GMapMarkerRectWPRad(point, (int)float.Parse(TXT_WPRad.Text), MainMap);
                 GMapMarkerRect mBorders = new GMapMarkerRect(point);
                 {
@@ -4714,6 +4714,102 @@ namespace MissionPlanner.GCSViews
             }
         }
 
+        private void saveFieldPolygon()
+        {
+            if (drawnpolygon.Points.Count == 0)
+            {
+                return;
+            }
+
+
+            //SaveFileDialog sf = new SaveFileDialog();
+            //sf.Filter = "Polygon (*.poly)|*.poly";
+            //sf.ShowDialog();
+            //FolderBrowserDialog folderPath = new FolderBrowserDialog();
+            //folderPath.SelectedPath = "fields/";
+            //sf.InitialDirectory = "fields/";
+            //sf.FileName = fieldListBox.Items[fieldListBox.Items.Count - 1].ToString()+".poly";
+
+            try
+            {
+                System.IO.Directory.CreateDirectory("fields/");
+            }
+            catch(System.IO.IOException e)
+            {
+                CustomMessageBox.Show("couldn't make folder");
+                CustomMessageBox.Show(e.GetBaseException().ToString());
+            }
+
+            string fieldName = fieldListBox.Items[fieldListBox.Items.Count - 1].ToString();
+            System.IO.File.WriteAllText("fields/"+fieldName+".poly", " ");
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"fields/" + fieldName + ".poly"))
+            {
+                if (drawnpolygon.Points.Count > 0)
+                {
+                    foreach (var pll in drawnpolygon.Points)
+                    {
+                        file.WriteLine(pll.Lat + " " + pll.Lng);                        
+                    }
+
+                    PointLatLng pll2 = drawnpolygon.Points[0];
+
+                    file.WriteLine(pll2.Lat + " " + pll2.Lng);
+                }
+            }
+
+                       
+        }
+
+        private void loadFieldPoly(string fName)
+        {
+            string fieldName = "fields/" + fName + ".poly";
+            if (File.Exists(fieldName))
+            {
+                StreamReader sr = new StreamReader(fieldName);
+
+                drawnpolygonsoverlay.Markers.Clear();
+                drawnpolygonsoverlay.Polygons.Clear();
+                drawnpolygon.Points.Clear();
+
+                int a = 0;
+
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    if (line.StartsWith("#"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        string[] items = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        drawnpolygon.Points.Add(new PointLatLng(double.Parse(items[0]), double.Parse(items[1])));
+                        addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), double.Parse(items[1]), double.Parse(items[0]), 0);
+
+                        a++;
+                    }
+                }
+
+                // remove loop close
+                if (drawnpolygon.Points.Count > 1 && drawnpolygon.Points[0] == drawnpolygon.Points[drawnpolygon.Points.Count - 1])
+                {
+                    drawnpolygon.Points.RemoveAt(drawnpolygon.Points.Count - 1);
+                }
+
+                drawnpolygonsoverlay.Polygons.Add(drawnpolygon);
+
+                MainMap.UpdatePolygonLocalPosition(drawnpolygon);
+
+                MainMap.Invalidate();
+            }
+            else
+            {
+                CustomMessageBox.Show("Field could not be loaded");
+            }
+        }
+        
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             /*if (MainV2.comPort.MAV.cs.firmware != MainV2.Firmwares.ArduPlane) //TODO allow ArduCopter and test
@@ -5167,6 +5263,7 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
 
         private void BUT_addField_Click(object sender, EventArgs e)
         {
+            //fieldListBox.SetSelected(fieldListBox.SelectedItem., true);
             string fieldName = "";
             if(System.Windows.Forms.DialogResult.Cancel == InputBox.Show("Add New Field", "Give a name to the field", ref fieldName))
                 return;
@@ -5177,6 +5274,7 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             }
 
             fieldListBox.Items.Add(fieldName);
+            
             fieldLat.Add(fieldName, MainMap.Position.Lat.ToString());
             fieldLng.Add(fieldName, MainMap.Position.Lng.ToString());
 
@@ -5205,7 +5303,18 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
 
             fieldDoc.Save(path);
 
+            this.BUT_spray.Visible = false;
+            this.BUT_saveField.Visible = true;
+            this.BUT_saveField.Enabled = true;
+
             CustomMessageBox.Show(@"The field """ + fieldName + @""" was added");
+
+            CustomMessageBox.Show(@"Please outline your field");
+
+            //addPolygonPointToolStripMenuItem_Click(null, null);
+            drawnpolygon.Points.Clear();
+            drawnpolygonsoverlay.Markers.Clear();
+            polygongridmode = true;
         }
 
         private void BUT_deleteField_Click(object sender, EventArgs e)
@@ -5236,8 +5345,10 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
         {
             if(fieldListBox.SelectedItem == null)
                 return;
+            this.BUT_spray.Enabled = true;
             MainMap.Position = new PointLatLng(double.Parse(fieldLat[fieldListBox.SelectedItem.ToString()].ToString()), 
                 double.Parse(fieldLng[fieldListBox.SelectedItem.ToString()].ToString()));
+            loadFieldPoly(fieldListBox.SelectedItem.ToString());
         }
 
         private void lnk_centerHomeClicked(object sender, EventArgs e)
@@ -5264,6 +5375,15 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             if (startSprayResult == DialogResult.No)
                 return;
 
+        }
+
+        private void BUT_saveField_Click(object sender, EventArgs e)
+        {
+            this.BUT_saveField.Visible = false;
+            this.BUT_spray.Visible = true;
+            this.polygongridmode = false;
+            saveFieldPolygon();
+            fieldListBox.SetSelected(fieldListBox.Items.Count - 1, true);
         }
 
 

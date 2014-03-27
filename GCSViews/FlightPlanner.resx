@@ -580,7 +580,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 60</value>
+    <value>23, 32</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -604,10 +604,10 @@
     <value>2</value>
   </data>
   <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 363</value>
+    <value>6, 395</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 85</value>
+    <value>150, 53</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -622,7 +622,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1036,7 +1036,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1228,7 +1228,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 345</value>
+    <value>8, 370</value>
   </data>
   <data name="lbl_status.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -1249,7 +1249,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="splitter1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -1344,6 +1344,9 @@
   <data name="BUT_spray.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="BUT_spray.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="BUT_spray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1371,6 +1374,42 @@
   <data name="&gt;&gt;BUT_spray.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BUT_saveField.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="BUT_saveField.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BUT_saveField.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BUT_saveField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 164</value>
+  </data>
+  <data name="BUT_saveField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 21</value>
+  </data>
+  <data name="BUT_saveField.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="BUT_saveField.Text" xml:space="preserve">
+    <value>Save Field</value>
+  </data>
+  <data name="BUT_saveField.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;BUT_saveField.Name" xml:space="preserve">
+    <value>BUT_saveField</value>
+  </data>
+  <data name="&gt;&gt;BUT_saveField.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_saveField.Parent" xml:space="preserve">
+    <value>panelAction</value>
+  </data>
+  <data name="&gt;&gt;BUT_saveField.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="BUT_deleteField.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -1396,7 +1435,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;BUT_deleteField.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="BUT_addField.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1423,7 +1462,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;BUT_addField.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1453,7 +1492,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="fieldListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1477,7 +1516,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;fieldListBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lnk_kml.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1510,7 +1549,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;lnk_kml.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chk_grid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1540,13 +1579,13 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;chk_grid.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="comboBoxMapType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="comboBoxMapType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 317</value>
+    <value>17, 327</value>
   </data>
   <data name="comboBoxMapType.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 21</value>
@@ -1567,7 +1606,7 @@
     <value>panelAction</value>
   </data>
   <data name="&gt;&gt;comboBoxMapType.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="panelAction.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>

@@ -97,6 +97,8 @@
             this.splitter1 = new BSE.Windows.Forms.Splitter();
             this.BUT_Add = new MissionPlanner.Controls.MyButton();
             this.panelAction = new BSE.Windows.Forms.Panel();
+            this.BUT_spray = new MissionPlanner.Controls.MyButton();
+            this.BUT_saveField = new MissionPlanner.Controls.MyButton();
             this.BUT_deleteField = new MissionPlanner.Controls.MyButton();
             this.BUT_addField = new MissionPlanner.Controls.MyButton();
             this.label17 = new System.Windows.Forms.Label();
@@ -171,7 +173,6 @@
             this.panelBASE = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.BUT_spray = new MissionPlanner.Controls.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -635,6 +636,7 @@
             this.panelAction.CaptionHeight = 21;
             this.panelAction.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.panelAction.Controls.Add(this.BUT_spray);
+            this.panelAction.Controls.Add(this.BUT_saveField);
             this.panelAction.Controls.Add(this.BUT_deleteField);
             this.panelAction.Controls.Add(this.BUT_addField);
             this.panelAction.Controls.Add(this.label17);
@@ -667,6 +669,24 @@
             this.panelAction.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelAction.ToolTipTextExpandIconPanelExpanded = null;
             this.panelAction.CloseClick += new System.EventHandler<System.EventArgs>(this.panelAction_CloseClick);
+            // 
+            // BUT_spray
+            // 
+            resources.ApplyResources(this.BUT_spray, "BUT_spray");
+            this.BUT_spray.Name = "BUT_spray";
+            this.BUT_spray.UseVisualStyleBackColor = true;
+            this.BUT_spray.Click += new System.EventHandler(this.BUT_spray_Click);
+            // 
+            // BUT_saveField
+            // 
+            resources.ApplyResources(this.BUT_saveField, "BUT_saveField");
+            this.BUT_saveField.BackColor = System.Drawing.Color.Maroon;
+            this.BUT_saveField.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(0)))), ((int)(((byte)(34)))));
+            this.BUT_saveField.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BUT_saveField.Name = "BUT_saveField";
+            this.BUT_saveField.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BUT_saveField.UseVisualStyleBackColor = false;
+            this.BUT_saveField.Click += new System.EventHandler(this.BUT_saveField_Click);
             // 
             // BUT_deleteField
             // 
@@ -1201,13 +1221,6 @@
             this.timer1.Interval = 1200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // BUT_spray
-            // 
-            resources.ApplyResources(this.BUT_spray, "BUT_spray");
-            this.BUT_spray.Name = "BUT_spray";
-            this.BUT_spray.UseVisualStyleBackColor = true;
-            this.BUT_spray.Click += new System.EventHandler(this.BUT_spray_Click);
-            // 
             // FlightPlanner
             // 
             resources.ApplyResources(this, "$this");
@@ -1373,5 +1386,6 @@
         private Controls.MyButton BUT_deleteField;
         private System.Windows.Forms.LinkLabel lnk_centerHome;
         private Controls.MyButton BUT_spray;
+        private Controls.MyButton BUT_saveField;
     }
 }

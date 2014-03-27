@@ -17,7 +17,7 @@ namespace MissionPlanner
         Thread scriptThread;
         System.Threading.Timer timerThread;
 
-        Script script = new Script();
+        Script script;
         bool scriptRunning = false;
         DateTime timeout = DateTime.Now;
         static Microsoft.Scripting.Hosting.ScriptEngine engine;
@@ -38,8 +38,14 @@ namespace MissionPlanner
 
         public void testCommand()
         {
-            script.SendRC(3, 1000, false);
-            script.SendRC(4, 1500, true);
+            script.runScript("Script.SendRC(3, 1000, false)");
+            script.runScript("Script.SendRC(4, 1500, true)");
+        }
+
+        public void armMotors()
+        {
+            string arm = @File.ReadAllText("vCommandArm.txt");
+            script.runScript(arm);
         }
 
         public void turn(String dir)
@@ -48,13 +54,17 @@ namespace MissionPlanner
             switch(dir)
             {                    
                 case "right":
-                    script.SendRC(4, 1500, true);
+                    string comm = @File.ReadAllText("vCommandRight.txt");
+                    script.runScript(comm);
+                    //script.SendRC(5, 1500, true);;
                     break;
                 case "left":
-                    script.SendRC(4, 2000, false);
+                    //script.runScript("Script.SendRC(4, 2000, false)");
+                    comm = @File.ReadAllText("vCommandLeft.txt");
+                    script.runScript(comm);
                     break;
                 case "stop":
-                    script.SendRC(3, 0, true);
+                    script.runScript("Script.SendRC(3, 0, true)");
                     break;
             }
         }
@@ -73,6 +83,7 @@ namespace MissionPlanner
         void run_selected_script_callback(Object state)
         {
             timerThread.Change(Timeout.Infinite, Timeout.Infinite);
+             script = new Script();
 
             try
             {
@@ -91,14 +102,16 @@ namespace MissionPlanner
             if(cs.connected == true)
                 turn(command);
 
-            timerThread.Change(2000, Timeout.Infinite);
+            //timerThread.Change(2000, Timeout.Infinite);
             //timerThread.Dispose();            
             
         }
 
         public void startScriptThread()//object sender, EventArgs e)
-        {          
-            
+        {
+            ScriptConsole console = new ScriptConsole();
+            Script t = new Script(true);
+            console.SetScript(script);
 
             /*try
             {

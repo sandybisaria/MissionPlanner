@@ -3011,6 +3011,8 @@ print 'Roll complete'
         //}
         private void BUT_run_back_script_Click(object sender, EventArgs e)
         {
+            //ScriptStart();
+            
             videoInterface = new ScriptVideoInterface();
             videoInterface.startScriptThread();
             BUT_run_back_script.Enabled = false;

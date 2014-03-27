@@ -343,6 +343,7 @@
       <DependentUpon>Command.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Waypoints\Spline.cs" />
+    <Compile Include="FieldHandler.cs" />
     <Compile Include="Log\LogOutput.cs" />
     <Compile Include="Log\Scan.cs" />
     <Compile Include="Maps\Custom.cs" />
