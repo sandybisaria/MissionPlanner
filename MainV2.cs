@@ -586,6 +586,8 @@ namespace MissionPlanner
         {
             comPort.giveComport = false;
 
+            Start x = new Start();
+
             // sanity check
             if (comPort.BaseStream.IsOpen && MainV2.comPort.MAV.cs.groundspeed > 4)
             {

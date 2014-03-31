@@ -10,13 +10,16 @@
 #include <iostream>
 #include <chrono>
 
+using namespace std;
+
 class Start
 {
 private:
-	static void outputToStream(bool&);
-	bool keepGoing;
-	std::thread mainThread;
+	static void outputToStream(Start*);
+	static void finishExecution(Start*);
+	thread mainThread;
+	thread stopThread;
 public:
+	bool keepGoing;
 	Start(void);
-	void stop(void);
 };

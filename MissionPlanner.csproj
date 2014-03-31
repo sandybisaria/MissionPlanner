@@ -344,6 +344,9 @@
     </Compile>
     <Compile Include="Controls\Waypoints\Spline.cs" />
     <Compile Include="FieldHandler.cs" />
+    <Compile Include="Generated\ImageProcessing.cs" />
+    <Compile Include="Generated\ImageProcessingPINVOKE.cs" />
+    <Compile Include="Generated\Start.cs" />
     <Compile Include="Log\LogOutput.cs" />
     <Compile Include="Log\Scan.cs" />
     <Compile Include="Maps\Custom.cs" />
@@ -2418,9 +2421,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Generated\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

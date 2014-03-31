@@ -1,21 +1,26 @@
 #include "Start.h"
 
-void Start::outputToStream(bool& input)
+void Start::outputToStream(Start* obj)
 {
-	while (input)
+	while (obj->keepGoing)
 	{
-		std::cout << "Testing..." << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(1));
+		cout << "Testing..." << endl;
+		this_thread::sleep_for(chrono::seconds(1));
 	}
+	return;
+}
+
+void Start::finishExecution(Start* obj)
+{
+	this_thread::sleep_for(chrono::seconds(6));
+	obj->keepGoing = false;
 }
 
 Start::Start(void)
 {
 	keepGoing = true;
-	mainThread = std::thread(&outputToStream);
-}
-
-void Start::stop(void)
-{
-	keepGoing = false;
+	mainThread = thread(outputToStream, this);
+	stopThread = thread(finishExecution, this);
+	mainThread.join();
+	stopThread.join();
 }
