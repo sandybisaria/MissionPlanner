@@ -283,6 +283,9 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_ImageProcessing(SWIG_CSha
     #include "Start.h"  
 
 
+#include <string>
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -315,6 +318,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Start() {
   
   result = (Start *)new Start();
   jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_Start_returnCount(void * jarg1) {
+  char * jresult ;
+  Start *arg1 = (Start *) 0 ;
+  std::string result;
+  
+  arg1 = (Start *)jarg1; 
+  result = (arg1)->returnCount();
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
 

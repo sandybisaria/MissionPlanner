@@ -87,7 +87,7 @@ namespace MissionPlanner
 
             try
             {
-                command = File.ReadAllText("videoDirections.txt");
+                command = File.ReadAllText("videoDirections.txt"); //TODO From ImageProcessing
             }
             catch (Exception ex)
             {

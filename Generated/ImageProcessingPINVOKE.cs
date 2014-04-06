@@ -194,6 +194,9 @@ class ImageProcessingPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_new_Start")]
   public static extern global::System.IntPtr new_Start();
 
+  [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_returnCount")]
+  public static extern string Start_returnCount(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_delete_Start")]
   public static extern void delete_Start(global::System.Runtime.InteropServices.HandleRef jarg1);
 }

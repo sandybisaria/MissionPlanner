@@ -50,4 +50,9 @@ public class Start : global::System.IDisposable {
   public Start() : this(ImageProcessingPINVOKE.new_Start(), true) {
   }
 
+  public string returnCount() {
+    string ret = ImageProcessingPINVOKE.Start_returnCount(swigCPtr);
+    return ret;
+  }
+
 }

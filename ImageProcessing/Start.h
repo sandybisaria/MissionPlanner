@@ -9,12 +9,14 @@
 #include <thread>
 #include <iostream>
 #include <chrono>
+#include <string>
 
 using namespace std;
 
 class Start
 {
 private:
+	int count = 0;
 	static void outputToStream(Start*);
 	static void finishExecution(Start*);
 	thread mainThread;
@@ -22,4 +24,5 @@ private:
 public:
 	bool keepGoing;
 	Start(void);
+	string returnCount();
 };

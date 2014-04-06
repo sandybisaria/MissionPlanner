@@ -4,7 +4,7 @@ void Start::outputToStream(Start* obj)
 {
 	while (obj->keepGoing)
 	{
-		cout << "Testing..." << endl;
+		obj->count++;
 		this_thread::sleep_for(chrono::seconds(1));
 	}
 	return;
@@ -20,7 +20,10 @@ Start::Start(void)
 {
 	keepGoing = true;
 	mainThread = thread(outputToStream, this);
-	stopThread = thread(finishExecution, this);
-	mainThread.join();
-	stopThread.join();
+	mainThread.detach();
+}
+
+string Start::returnCount()
+{
+	return to_string(count);
 }
