@@ -212,15 +212,11 @@ namespace MissionPlanner
         /// </summary>
         static internal ConnectionControl _connectionControl;
 
-        Start s;
-
         public MainV2()
         {
             log.Info("Mainv2 ctor");
 
             Form splash = Program.Splash;
-
-            s = new Start();
 
             splash.Refresh();
 
@@ -585,7 +581,6 @@ namespace MissionPlanner
 
         private void MenuConnect_Click(object sender, EventArgs e)
         {
-            CustomMessageBox.Show(s.returnCount());
 
             comPort.giveComport = false;
 

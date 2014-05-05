@@ -152,6 +152,7 @@ namespace MissionPlanner
             timerThread.Dispose();
             scriptRunning = false;
             CustomMessageBox.Show("aborted background script");
+
            // BUT_abort_script.Visible = false;
         }
         /*private void scriptChecker_Tick(object sender, EventArgs e)

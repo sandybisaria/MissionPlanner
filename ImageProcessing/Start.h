@@ -18,11 +18,14 @@ class Start
 private:
 	int count = 0;
 	static void outputToStream(Start*);
-	static void finishExecution(Start*);
+	//static void finishExecution(Start*);
 	thread mainThread;
 	thread stopThread;
-public:
+protected:
 	bool keepGoing;
+public:
 	Start(void);
-	string returnCount();
+	void beginExecution(void);
+	void endExecution(void);
+	string returnCount(void);
 };

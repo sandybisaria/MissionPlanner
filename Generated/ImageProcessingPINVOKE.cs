@@ -185,14 +185,14 @@ class ImageProcessingPINVOKE {
   }
 
 
-  [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_keepGoing_set")]
-  public static extern void Start_keepGoing_set(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_keepGoing_get")]
-  public static extern bool Start_keepGoing_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_new_Start")]
   public static extern global::System.IntPtr new_Start();
+
+  [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_beginExecution")]
+  public static extern void Start_beginExecution(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_endExecution")]
+  public static extern void Start_endExecution(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("ImageProcessing", EntryPoint="CSharp_Start_returnCount")]
   public static extern string Start_returnCount(global::System.Runtime.InteropServices.HandleRef jarg1);

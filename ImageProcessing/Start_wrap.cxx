@@ -290,28 +290,6 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_ImageProcessing(SWIG_CSha
 extern "C" {
 #endif
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Start_keepGoing_set(void * jarg1, unsigned int jarg2) {
-  Start *arg1 = (Start *) 0 ;
-  bool arg2 ;
-  
-  arg1 = (Start *)jarg1; 
-  arg2 = jarg2 ? true : false; 
-  if (arg1) (arg1)->keepGoing = arg2;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Start_keepGoing_get(void * jarg1) {
-  unsigned int jresult ;
-  Start *arg1 = (Start *) 0 ;
-  bool result;
-  
-  arg1 = (Start *)jarg1; 
-  result = (bool) ((arg1)->keepGoing);
-  jresult = result; 
-  return jresult;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_Start() {
   void * jresult ;
   Start *result = 0 ;
@@ -319,6 +297,22 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Start() {
   result = (Start *)new Start();
   jresult = (void *)result; 
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Start_beginExecution(void * jarg1) {
+  Start *arg1 = (Start *) 0 ;
+  
+  arg1 = (Start *)jarg1; 
+  (arg1)->beginExecution();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_Start_endExecution(void * jarg1) {
+  Start *arg1 = (Start *) 0 ;
+  
+  arg1 = (Start *)jarg1; 
+  (arg1)->endExecution();
 }
 
 

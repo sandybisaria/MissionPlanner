@@ -37,17 +37,15 @@ public class Start : global::System.IDisposable {
     }
   }
 
-  public bool keepGoing {
-    set {
-      ImageProcessingPINVOKE.Start_keepGoing_set(swigCPtr, value);
-    } 
-    get {
-      bool ret = ImageProcessingPINVOKE.Start_keepGoing_get(swigCPtr);
-      return ret;
-    } 
+  public Start() : this(ImageProcessingPINVOKE.new_Start(), true) {
   }
 
-  public Start() : this(ImageProcessingPINVOKE.new_Start(), true) {
+  public void beginExecution() {
+    ImageProcessingPINVOKE.Start_beginExecution(swigCPtr);
+  }
+
+  public void endExecution() {
+    ImageProcessingPINVOKE.Start_endExecution(swigCPtr);
   }
 
   public string returnCount() {

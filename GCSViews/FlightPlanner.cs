@@ -421,7 +421,7 @@ namespace MissionPlanner.GCSViews
                 }
 
             }
-            catch (Exception) { }
+            catch { }
 
             RegeneratePolygon();
 
@@ -5332,7 +5332,7 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             XmlDocument fieldDoc = new XmlDocument();
             fieldDoc.Load(path);
 
-            XmlNode deletedField = fieldDoc.SelectSingleNode("/Fields/Field[Name='" + fieldListBox.SelectedItem.ToString() + "']");
+            XmlNode deletedField = fieldDoc.SelectSingleNode(@"/Fields/Field[Name='" + fieldListBox.SelectedItem.ToString() + "']");
             deletedField.ParentNode.RemoveChild(deletedField);
             fieldDoc.Save(path);
 
@@ -5343,12 +5343,14 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
 
         private void fieldListBox_Selected(object sender, EventArgs e)
         {
-            if(fieldListBox.SelectedItem == null)
+            string fieldName;
+            if (fieldListBox.SelectedItem == null)
                 return;
+            else
+                fieldName = fieldListBox.SelectedItem.ToString();
             this.BUT_spray.Enabled = true;
-            MainMap.Position = new PointLatLng(double.Parse(fieldLat[fieldListBox.SelectedItem.ToString()].ToString()), 
-                double.Parse(fieldLng[fieldListBox.SelectedItem.ToString()].ToString()));
-            loadFieldPoly(fieldListBox.SelectedItem.ToString());
+            MainMap.Position = new PointLatLng(double.Parse(fieldLat[fieldName].ToString()), double.Parse(fieldLng[fieldName].ToString()));
+            loadFieldPoly(fieldName);
         }
 
         private void lnk_centerHomeClicked(object sender, EventArgs e)
@@ -5370,10 +5372,10 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
         {
             if (fieldListBox.SelectedItem == null)
                 return;
-            DialogResult startSprayResult = MessageBox.Show("Would you like to spray the " + fieldListBox.SelectedItem.ToString()
-                + " field?", "Start spraying", MessageBoxButtons.YesNo);
-            if (startSprayResult == DialogResult.No)
+            if (MessageBox.Show("Would you like to spray the " + fieldListBox.SelectedItem.ToString()
+                + " field?", "Start spraying", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 return;
+
 
         }
 
