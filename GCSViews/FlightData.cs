@@ -3055,6 +3055,34 @@ print 'Roll complete'
         {
             scriptthread.Abort();
             scriptrunning = false;
+            
+            try
+            {
+                scripttext = @File.ReadAllText("vCommandAbort.txt");
+                script.runScript(scripttext);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open script file due to exception: " + ex.Message);
+                scriptthread.Abort();
+                scriptrunning = false;
+                BUT_abort_script.Visible = false;
+                return;
+            }
+
+            scriptthread = new System.Threading.Thread(new System.Threading.ThreadStart(run_selected_script))
+            {
+                IsBackground = true,
+                Name = "Script Thread (new)"
+            };
+            labelScriptStatus.Text = "Script Status: Running";
+
+            script = null;
+            outputwindowstarted = false;
+
+            scriptthread.Start();
+            scriptrunning = true;
+
             BUT_abort_script.Visible = false;
         }
         private void BUT_abort_background_script_Click(object sender, EventArgs e)
