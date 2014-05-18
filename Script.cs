@@ -29,6 +29,9 @@ namespace MissionPlanner
                 engine.Runtime.Shutdown();
 
             engine = Python.CreateEngine(options);
+            var paths = engine.GetSearchPaths();
+            paths.Add(@"C:\Program Files (x86)\IronPython 2.7\Lib"); //Allows for additional libraries from IronPython. Requires download from https://ironpython.codeplex.com/releases/view/90087
+            engine.SetSearchPaths(paths);
             scope = engine.CreateScope();
 
             var all = System.Reflection.Assembly.GetExecutingAssembly();
@@ -38,8 +41,8 @@ namespace MissionPlanner
             scope.SetVariable("Script", this);
             scope.SetVariable("mavutil", this);
 
-            engine.CreateScriptSourceFromString("print 'hello world from python'").Execute(scope);
-            engine.CreateScriptSourceFromString("print cs.roll").Execute(scope);
+            //engine.CreateScriptSourceFromString("print 'hello world from python'").Execute(scope); //Unneeded testing
+            //engine.CreateScriptSourceFromString("print cs.roll").Execute(scope);
 
             if (redirectOutput)
             {
