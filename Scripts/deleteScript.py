@@ -19,25 +19,32 @@ print 'Motors Armed!'
 Script.SendRC(3,1100,True)
 Script.Sleep(5000)
 
-Script.SendRC(3,1600,True)
-Script.Sleep(5000)
+file = open("videoInstructions.txt", "r")
+instruction = file.readline()
 
-print 'starting yaw'
+while(True):
+	print instruction
 
-new = cs.yaw + 30
-Script.SendRC(3,1450,True)
-Script.SendRC(4,1750, True)
-while(cs.yaw < new):
-	Script.Sleep(10)
-print 'ended while'
+	if(instruction == 'straight'):
+		Script.SendRC(3,1100,True)
+		Script.Sleep(5000)
+	elif(instruction == 'right'):
+		new = cs.yaw + 50
+		Script.SendRC(3,1050,True)
+		Script.SendRC(4,1750, True)
+		print 'bob'
+		#while(cs.yaw < new):
+		#	Script.Sleep(10)
+	elif(instruction == 'left'):
+		Script.SendRC(3,1100,True)
+		Script.Sleep(2000)
 
-Script.SendRC(3,1100,True)
-Script.Sleep(4000)
 #Script.ChangeMode("LAND")
 
 
 for chan in range(1,9):
-    Script.SendRC(chan,0,True)
+	Script.SendRC(chan,0,True)
+
 #while cs.alt > 0.5:
 # Script.SendRC(3,1000,False)
 # Script.SendRC(4,1000,True)
