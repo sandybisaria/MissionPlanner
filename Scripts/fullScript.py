@@ -34,7 +34,7 @@ while(True):
 	print 'hi ' + instruction
 	
 	if(instruction == "straight"):		
-		Script.SendRC(3,1200,True)
+		Script.SendRC(3,1400,True)
 		Script.Sleep(5000)
 	elif(instruction == "right"):
 		initial = cs.yaw
@@ -42,7 +42,7 @@ while(True):
 		print "yaw:"+str(cs.yaw)
 		print "new:"+str(new)
 		Script.SendRC(3,1450,True)
-		Script.SendRC(4,1750, True)
+		Script.SendRC(4,1750, False)
 		print 'starting right loop'
 		while(getDiff(cs.yaw, new) > 0):
 			print str(cs.yaw) + "  |  " + str(new)
@@ -53,11 +53,13 @@ while(True):
 		print "yaw:"+str(cs.yaw)
 		print "new:"+str(new)
 		Script.SendRC(3,1450,True)
-		Script.SendRC(4,1250, True)#########Maybe put this in the while if it doesn't turn?
+		
 		print 'starting left loop'
+		Script.SendRC(2,1750, True)#####
 		while(getDiff(cs.yaw, new) < 0):
-			print str(cs.yaw) + "  |  " + str(new)
-			Script.Sleep(600)
+			Script.SendRC(4,1750, True)#####
+			print str(cs.yaw) + "  |  " + str(new)			
+			Script.Sleep(300)
 	else:#(instruction == "stop")
 		print 'setting to althold'
 		Script.ChangeMode("AltHold")

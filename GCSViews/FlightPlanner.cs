@@ -567,6 +567,12 @@ namespace MissionPlanner.GCSViews
         /// <param name="e"></param>
         private void BUT_Add_Click(object sender, EventArgs e)
         {
+            //##########################################################
+            //MAVLinkInterface b = new MAVLinkInterface();
+            //b.setParam("jklfds", 40);
+            //float found = b.GetParam((short)MAVLink.MAV_CMD.CONDITION_DELAY);
+            //CustomMessageBox.Show(""+found);
+            
             if (Commands.CurrentRow == null)
             {
                 selectedrow = 0;
@@ -982,6 +988,9 @@ namespace MissionPlanner.GCSViews
                         int command = (byte)(int)Enum.Parse(typeof(MAVLink.MAV_CMD), Commands.Rows[a].Cells[Command.Index].Value.ToString(), false);
                         if (command < (byte)MAVLink.MAV_CMD.LAST && command != (byte)MAVLink.MAV_CMD.TAKEOFF || command == (byte)MAVLink.MAV_CMD.DO_SET_ROI)
                         {
+                            
+                            
+                           
                             string cell2 = Commands.Rows[a].Cells[Alt.Index].Value.ToString(); // alt
                             string cell3 = Commands.Rows[a].Cells[Lat.Index].Value.ToString(); // lat
                             string cell4 = Commands.Rows[a].Cells[Lon.Index].Value.ToString(); // lng

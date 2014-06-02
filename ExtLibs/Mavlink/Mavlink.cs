@@ -169,7 +169,7 @@ public partial class MAVLink
         GPS_POINT = 4,
         ///<summary>  | </summary>
         ENUM_END = 5,
-
+       
     };
 
     ///<summary>  </summary>
