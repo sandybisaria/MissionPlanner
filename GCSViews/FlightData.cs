@@ -3035,7 +3035,7 @@ print 'Roll complete'
                 scriptChecker.Enabled = false;
                 BUT_select_script.Enabled = true;
                 BUT_run_script.Enabled = true;
-                BUT_abort_script.Visible = false;
+                BUT_abort_script.Visible = true; //Changed to true
                 BUT_edit_selected.Enabled = true;
                 checkBoxRedirectOutput.Enabled = true;
             }
@@ -3066,7 +3066,7 @@ print 'Roll complete'
                 MessageBox.Show("Failed to open script file due to exception: " + ex.Message);
                 scriptthread.Abort();
                 scriptrunning = false;
-                BUT_abort_script.Visible = false;
+                BUT_abort_script.Visible = true; //Changed to true
                 return;
             }
 
@@ -3083,13 +3083,13 @@ print 'Roll complete'
             scriptthread.Start();
             scriptrunning = true;
 
-            BUT_abort_script.Visible = false;
+            BUT_abort_script.Visible = true; //Changed to true
         }
         private void BUT_abort_background_script_Click(object sender, EventArgs e)
         {
             videoInterface.abortScript();
             scriptrunning = false;
-            BUT_abort_script.Visible = false;
+            BUT_abort_script.Visible = true; //Changed to true
             BUT_abort_background_script.Visible = false;
             BUT_run_back_script.Enabled = true;
         }

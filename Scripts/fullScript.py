@@ -27,59 +27,49 @@ print 'hi'
 
 
 print 'starting main loop'
-while(True):
-	file = open("videoInstructions.txt", "r")
-	instruction = file.read()
-	file.close()
-	print 'hi ' + instruction
-	
-	if(instruction == "straight"):		
-		Script.SendRC(3,1400,True)
-		Script.Sleep(5000)
-	elif(instruction == "right"):
-		initial = cs.yaw
-		new = cs.yaw+90	
-		print "yaw:"+str(cs.yaw)
-		print "new:"+str(new)
-		Script.SendRC(3,1450,True)
-		Script.SendRC(4,1750, False)
-		print 'starting right loop'
-		while(getDiff(cs.yaw, new) > 0):
-			print str(cs.yaw) + "  |  " + str(new)
-			Script.Sleep(600)
-	elif(instruction == "left"):
-		initial = cs.yaw
-		new = cs.yaw-90	
-		print "yaw:"+str(cs.yaw)
-		print "new:"+str(new)
-		Script.SendRC(3,1450,True)
-		
-		print 'starting left loop'
-		Script.SendRC(2,1750, True)#####
-		while(getDiff(cs.yaw, new) < 0):
-			Script.SendRC(4,1750, True)#####
-			print str(cs.yaw) + "  |  " + str(new)			
-			Script.Sleep(300)
-	else:#(instruction == "stop")
-		print 'setting to althold'
-		Script.ChangeMode("AltHold")
-	#Script.ChangeMode("LAND")
-	
-	###TRY THIS
-	"""
-	elif(instruction == "left"):
-		new = cs.yaw-90
-		if(new < 0):
-			new = 360+new
-		print "yaw:"+str(cs.yaw)
-		print "new:"+str(new)
-		Script.SendRC(3,1450,True)
-		Script.SendRC(4,1250, True)
-		print 'starting left loop'
-		while( cs.yaw > new ):
-			print str(cs.yaw) + "  |  " + str(new)
-			Script.Sleep(10)
-	"""
+
+file = open("videoDirections.txt", "r")
+instruction = file.read()
+file.close()
+print 'hi ' + instruction
+
+if(instruction == "straight"):
+	Script.SendRC(3, 1400, True)
+	Script.SendRC(2,1400,True) #Tilt down
+	Script.Sleep(500)
+elif(instruction == "right"):
+	initial = cs.yaw
+	new = cs.yaw+90	
+	print "yaw:"+str(cs.yaw)
+	print "new:"+str(new)
+	Script.SendRC(3,1450,True)
+	Script.SendRC(4,1750, True)
+	print 'starting right loop'
+	while(getDiff(cs.yaw, new) > 0):
+		print str(cs.yaw) + "  |  " + str(new)
+		Script.Sleep(600)
+	Script.SendRC(4, 1450, True)
+	Script.Sleep(500)
+elif(instruction == "left"):
+	initial = cs.yaw
+	new = cs.yaw-90	
+	print "yaw:"+str(cs.yaw)
+	print "new:"+str(new)
+	Script.SendRC(3,1450,True)
+	Script.SendRC(4,1325, True)
+	print 'starting left loop'
+	while(getDiff(cs.yaw, new) < 0):
+		print str(cs.yaw) + "  |  " + str(new)
+		Script.Sleep(600)
+	Script.SendRC(4, 1490, True)
+	Script.Sleep(500)
+else:#(instruction == "stop")
+	print 'setting to althold'
+	Script.ChangeMode("AltHold")
+#Script.ChangeMode("LAND")
+print 'done loop'
+Script.Sleep(2000)
+
 
 
 Script.SendRC(3,1500,True)
@@ -94,4 +84,4 @@ for chan in range(1,9):
 # Script.SendRC(4,1500,True)
 # print 'Motors Disarmed!'
 
-Script.ChangeMode("Stabilize")
+Script.ChangeMode("AltHold")
